@@ -17,5 +17,11 @@ class MyGraph:
     def get_graph(self):
         return self.graph
 
-    def load_graph(file):
-        return
+    def load_graph(self, file):
+        f = open(file, 'r')
+        self.V = int(f.readline())
+        self.graph = {v: dict() for v in range(self.V)}
+        for i in range(self.V):
+            line = f.readline()
+            edge = [int(x) for x in line.split()]
+            self.add_edge(edge[0], edge[1])
