@@ -6,7 +6,19 @@ from topology import Topology
 
 
 if __name__ == "__main__":
-    # Create test graphs
+    # Create graph using file
+    f = open("input.txt", 'r')
+    N = int(f.readline())
+    g4 = MyGraph(N)
+    for i in range(N):
+        line = f.readline()
+        edge =[int(x) for x in line.split()]
+        g4.add_edge(edge[0], edge[1])
+
+    print("input graph from file: ")
+    print(g4.get_graph())
+
+    # Create graph using API
     g1 = MyGraph(5)
     g1.add_edge(1, 0)
     g1.add_edge(0, 2)
@@ -28,25 +40,6 @@ if __name__ == "__main__":
     g3.add_edge(1, 6)
     g3.add_edge(3, 5)
     g3.add_edge(4, 5)
-
-    g4 = MyGraph(11)
-    g4.add_edge(0, 1)
-    g4.add_edge(0, 3)
-    g4.add_edge(1, 2)
-    g4.add_edge(1, 4)
-    g4.add_edge(2, 0)
-    g4.add_edge(2, 6)
-    g4.add_edge(3, 2)
-    g4.add_edge(4, 5)
-    g4.add_edge(4, 6)
-    g4.add_edge(5, 6)
-    g4.add_edge(5, 7)
-    g4.add_edge(5, 8)
-    g4.add_edge(5, 9)
-    g4.add_edge(6, 4)
-    g4.add_edge(7, 9)
-    g4.add_edge(8, 9)
-    g4.add_edge(9, 8)
 
     g5 = MyGraph(5)
     g5.add_edge(0, 1)
