@@ -7,13 +7,8 @@ from topology import Topology
 
 if __name__ == "__main__":
     # Create graph using file
-    f = open("input.txt", 'r')
-    N = int(f.readline())
-    g4 = MyGraph(N)
-    for i in range(N):
-        line = f.readline()
-        edge =[int(x) for x in line.split()]
-        g4.add_edge(edge[0], edge[1])
+    g4 = MyGraph(1)
+    g4.load_graph("input.txt")
 
     print("input graph from file: ")
     print(g4.get_graph())
