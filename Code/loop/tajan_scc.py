@@ -13,6 +13,7 @@ class Tarjan_SCC:
     def __init__(self, mygraph):
         # make a copy of the graph
         self.graph =  mygraph.get_graph()
+        self.nodes = mygraph.get_nodes()
 
     def dfs(self, node):
         self.index[node] = self.index_counter[0]
