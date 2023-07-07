@@ -15,7 +15,8 @@ class Topology:
         # Store Topological Order
         self.tsort = []
         # To ensure visited vertex
-        self.visited = [False] * self.V
+        self.visited = set()
+        self.nodes = mygraph.get_nodes()
 
     def add_edge(self, u, v):
         self.graph[u].append(v)
@@ -23,12 +24,15 @@ class Topology:
     # Function to perform Topology
     def dfs(self, u):
         # Set the vertex as visited
-        self.visited[u] = True
+        self.visited.add(u)
 
-        for it in self.graph[u]:
-            # Visit connected vertices
-            if not self.visited[it]:
-                self.dfs(it)
+        try:
+            for node in self.graph[u]:
+                # Visit connected vertices
+                if not node in self.visited:
+                    self.dfs(node)
+        except:
+            pass
 
         # Push into the stack on
         # complete visit of vertex
@@ -40,9 +44,9 @@ class Topology:
         pos = dict()
         ind = 0
 
-        for i in range(self.V):
-            if not self.visited[i]:
-                self.dfs(i)
+        for node in self.nodes:
+            if not node in self.visited:
+                self.dfs(node)
 
         # Pop all elements from stack
         while (len(self.s) != 0):
@@ -57,16 +61,19 @@ class Topology:
             # Pop from the stack
             self.s.pop()
 
-        for i in range(self.V):
-            for it in self.graph[i]:
-                first = 0 if i not in pos else pos[i]
-                second = 0 if it not in pos else pos[it]
+        for i in self.nodes:
+            try:
+                for it in self.graph[i]:
+                    first = 0 if i not in pos else pos[i]
+                    second = 0 if it not in pos else pos[it]
 
-                # If parent vertex
-                # does not appear first
-                if first > second:
-                    # Cycle exists
-                    return True
+                    # If parent vertex
+                    # does not appear first
+                    if first > second:
+                        # Cycle exists
+                        return True
+            except:
+                pass
 
         # Return false if cycle
         # does not exist

@@ -27,7 +27,10 @@ def simple_cycles(G):
         closed = set()
         blocked.add(startnode)
         B = defaultdict(set)
-        stack = [(startnode, list(G[startnode]))]
+        try:
+            stack = [(startnode, list(G[startnode]))]
+        except:
+            stack = []
         while stack:
             thisnode, nbrs = stack[-1]
             if nbrs:
@@ -37,7 +40,10 @@ def simple_cycles(G):
                     closed.update(path)
                 elif nextnode not in blocked:
                     path.append(nextnode)
-                    stack.append((nextnode, list(G[nextnode])))
+                    try:
+                        stack.append((nextnode, list(G[nextnode])))
+                    except:
+                        pass
                     closed.discard(nextnode)
                     blocked.add(nextnode)
                     continue
@@ -103,7 +109,10 @@ def strongly_connected_components(graph):
 def remove_node(G, target):
     # Completely remove a node from the graph
     # Expects values of G to be sets
-    del G[target]
+    try:
+        del G[target]
+    except:
+        pass
     for nbrs in G.values():
         nbrs.discard(target)
 

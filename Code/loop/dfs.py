@@ -11,36 +11,44 @@ class DFS:
         self.graph = mygraph.get_graph()
         self.V = len(self.graph)
         # To ensure visited vertex
-        self.visited = [False] * self.V
-        self.stack = [False] * self.V
+        self.visited = set()
+        self.nodes = mygraph.get_nodes()
+        self.stack = set()
 
     def add_edge(self, u, v):
         self.graph[u].append(v)
+        if not u in self.nodes:
+            self.nodes.append(u)
+        if not v in self.nodes:
+            self.nodes.append(v)
 
     # Function to perform DFS
     def dfs(self, u):
         # Set the vertex as visited
-        self.visited[u] = True
-        self.stack[u] = True
+        self.visited.add(u)
+        self.stack.add(u)
 
-        for it in self.graph[u]:
-            # Visit connected vertices
-            if not self.visited[it]:
-                if self.dfs(it):
+        try:
+            for node in self.graph[u]:
+                # Visit connected vertices
+                if not node in self.visited:
+                    if self.dfs(node):
+                        return True
+
+                elif node in self.stack:
                     return True
-
-            elif self.stack[it]:
-                return True
+        except:
+            pass
 
         # Push into the stack on
         # complete visit of vertex
-        self.stack[u] = False
+        self.stack.remove(u)
         return False
 
     def detect_loop(self):
-        for i in range(self.V):
-            if not self.visited[i]:
-                if self.dfs(i):
+        for node in self.nodes:
+            if not node in self.visited:
+                if self.dfs(node):
                     return True
 
         # Return false if cycle
