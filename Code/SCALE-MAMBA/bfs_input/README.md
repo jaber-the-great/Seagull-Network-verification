@@ -25,8 +25,16 @@ Go to SCALE-MAMBA directory
 cd SCALE-MAMBA
 ```
 The test code is under the directory 
-Programs/bfs_input 
+Programs/bfs_input/bfs_input.mpc 
 
+### Compile SCALE-MAMBA
+
+Use a directory (Programs/bfs_input) instead of file name (Programs/bfs_input/bfs_input.mpc) for compilation.
+
+```
+./compile.sh Programs/bfs_input
+```
+ 
 ### Example input 
 
 280_AS_LCC_IPv6L.edgelist
