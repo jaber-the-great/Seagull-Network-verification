@@ -1,6 +1,22 @@
 # SCALE-MAMBA Input 
 
 
+SCALE-MAMBA get input from stdin by default (without using C++ code to overwrite input).
+
+For example, the following code will read a secret int from stdin:
+
+sint.get_private_input_from(0)
+
+
+Linux pipe | can connect output content from another program (i.e. cat) and become
+stdin input for another program. 
+
+We use Linux cat to display content of input file and use Linux pipe to redirect to SCALE-MAMBA:
+
+```
+cat input.txt | SCALE-MAMBA-Player.x
+```
+
 ### SCALE-MAMBA
 
 Go to SCALE-MAMBA directory
