@@ -1,0 +1,13 @@
+from datetime import datetime
+
+NumOfEdges = 1384
+
+edges = sint.Matrix(NumOfEdges, 2)
+
+for i in range(NumOfEdges):
+   edges[i][0] = sint.get_private_input_from(0)
+   edges[i][1] = sint.get_private_input_from(0)
+
+print_ln("the first 10 edges")
+for i in range(10):
+   print_ln("[%s]: src = %s, dst = %s",i, edges[i][0].reveal(), edges[i][1].reveal())
