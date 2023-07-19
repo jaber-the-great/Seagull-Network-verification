@@ -1,6 +1,6 @@
 # SCALE-MAMBA Input 
 
-### Split original network edge list into 3 seperate files
+### Split the original network edge list into 3 separate files
 
 
 ```
@@ -35,7 +35,7 @@ cat in.2 | ./Player.x -verbose 1 1 Programs/recover_network
 
 terminal 2:
 
-Paryt 2
+Part 2
 
 ```
 cd SCALE-MAMBA
