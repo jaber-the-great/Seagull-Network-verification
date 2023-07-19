@@ -7,7 +7,7 @@
 python3 split-to-3-parties.py input.txt
 ```
 
-which will generate in.1, in.2, in.3 are three files containing (obfuscated) edge lists
+which will generate in.1, in.2, in.3, which are three files containing (obfuscated) edge lists
 
 
 ### SCALE-MAMBA Instructions
@@ -39,7 +39,7 @@ Paryt 2
 
 ```
 cd SCALE-MAMBA
-cat in.2 | ./Player.x -verbose 1 2 Programs/recover_network
+cat in.3 | ./Player.x -verbose 1 2 Programs/recover_network
 ```
 
 You should see the following output from terminal 0
