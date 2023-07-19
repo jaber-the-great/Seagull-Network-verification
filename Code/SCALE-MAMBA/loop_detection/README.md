@@ -15,7 +15,7 @@ Party 0
 
 ```
 cd SCALE-MAMBA
-cat in.1 | ./Player.x -verbose 1 0 Programs/addictive
+cat in.1 | ./Player.x -verbose 1 0 Programs/recover_network
 ```
 
 
@@ -25,7 +25,7 @@ Party 1
 
 ```
 cd SCALE-MAMBA
-cat in.2 | ./Player.x -verbose 1 1 Programs/addictive
+cat in.2 | ./Player.x -verbose 1 1 Programs/recover_network
 ```
 
 terminal 2:
@@ -34,15 +34,15 @@ Paryt 2
 
 ```
 cd SCALE-MAMBA
-cat in.2 | ./Player.x -verbose 1 2 Programs/addictive
+cat in.2 | ./Player.x -verbose 1 2 Programs/recover_network
 ```
 
 You should see the following output from terminal 0
 
 ```
-melody@BunnyLinux:~/SCALE-MAMBA$ cat in.1 | ./Player.x -verbose 1 0 Programs/addictive 
+melody@BunnyLinux:~/SCALE-MAMBA$ cat in.1 | ./Player.x -verbose 1 0 Programs/recover_network 
 + '[' '' == 1 ']'
-+ ./PlayerBinary.x -verbose 1 0 Programs/addictive
++ ./PlayerBinary.x -verbose 1 0 Programs/recover_network
 
 No FHE Factories 2
 Port Num Base 5000
@@ -73,10 +73,10 @@ p=340282366920938463463374607431768211507
 Using Mod2Engine system for the binary circuit processing
   - This uses Replicated sharing mod 2
 
-Opening file Programs/addictive/addictive.sch
+Opening file Programs/recover_network/recover_network.sch
 Number of online threads I will run in parallel =  1
 Number of program sequences I need to load =  1
-Loading program 0 from Programs/addictive/addictive-0.bc
+Loading program 0 from Programs/recover_network/recover_network-0.bc
 All connections now done
 Setting up threads
 I am player 0 in thread 0
@@ -112,7 +112,7 @@ received FIB from party 2: 3, 3
 get magic output [0] = (6, 6)
 get magic output [1] = (60, 60)
 Closing channel 0
-Compiler: ./compile-mamba.py -A -n -r -u -s Programs/addictive
+Compiler: ./compile-mamba.py -A -n -r -u -s Programs/recover_network
 Waiting for all clients to finish
 	Thread 0 terminating
 Waiting for all clients to finish
