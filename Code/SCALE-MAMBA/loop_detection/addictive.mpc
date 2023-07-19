@@ -1,0 +1,42 @@
+n = 2
+ch0 = regint(0)
+open_channel_with_return(ch0)
+
+#get from party 0
+x0 = Array(n, sint)
+y0 = Array(n, sint)
+@for_range(n)
+def body(i):
+    x0[i]= sint.get_private_input_from(0)
+    y0[i]= sint.get_private_input_from(0)
+
+#print_ln("received FIB from party 0: %s, %s", x0[0].reveal(), y0[0].reveal())
+
+#get from party 1
+x1 = Array(n, sint)
+y1 = Array(n, sint)
+@for_range(n)
+def body(i):
+    x1[i]= sint.get_private_input_from(1)
+    y1[i]= sint.get_private_input_from(1)
+
+#print_ln("received FIB from party 1: %s, %s", x1[0].reveal(), y1[0].reveal())
+
+#get from party 2
+x2 = Array(n, sint)
+y2 = Array(n, sint)
+@for_range(n)
+def body(i):
+    x2[i]= sint.get_private_input_from(2)
+    y2[i]= sint.get_private_input_from(2)
+
+#print_ln("received FIB from party 2: %s, %s", x2[0].reveal(), y2[0].reveal())
+
+@for_range(n)
+def body(i):
+    a = x0[i] + x1[i] + x2[i]
+    b = y0[i] + y1[i] + y2[i]
+    print_ln("get magic output [%s] = (%s, %s)", i, a.reveal(), b.reveal())
+
+
+close_channel(ch0)
