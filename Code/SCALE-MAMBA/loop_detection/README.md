@@ -1,11 +1,16 @@
 # SCALE-MAMBA Input 
 
-### Example input 
-
-in.1, in.2, in.3 are three files containing (obfuscated) edge lists
+### Split original network edge list into 3 seperate files
 
 
-### Instructions
+```
+python3 split-to-3-parties.py input.txt
+```
+
+which will generate in.1, in.2, in.3 are three files containing (obfuscated) edge lists
+
+
+### SCALE-MAMBA Instructions
 
 Launch 3 terminals on the Linux machine (can be same or different machines)
 
