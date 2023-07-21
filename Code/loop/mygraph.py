@@ -58,6 +58,7 @@ class MyGraph:
             self.add_node(edge[1])
             line = f.readline()
 
+
     def load_undirected_graph(self, file):
         f = open(file, 'r')
         self.V = 1
