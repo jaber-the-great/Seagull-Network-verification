@@ -34,6 +34,6 @@ def equal_to(x_sh, pub):
     r1 = _private_compare(x_sh1, pub).value
     r2 = _private_compare(x_sh2, x).value
     
-    return PrivateScalar(int((not r1) and (not r2)), tmp_vm)
+    return ((not r1) and (not r2))
     
 
