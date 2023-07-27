@@ -32,6 +32,9 @@ def visit_subdirectories(url, directory):
 
     # Visit each subdirectory recursively
     for subdir in subdirectories:
+        dirs = subdir['href']
+        if dirs[0:2] != "20":
+            continue
         subdir_url = url + subdir['href']
         subdir_name = subdir['href'].strip('/')
         subdir_path = os.path.join(directory, subdir_name)

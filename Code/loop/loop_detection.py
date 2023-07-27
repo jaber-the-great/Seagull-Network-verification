@@ -61,7 +61,6 @@ if __name__ == "__main__":
 
         g = load_graph(test_file)
 
-
         alg = Topology(g)
         print("\tTopology Sort: ", end = " ")
         result, runtime = benchmark(alg)

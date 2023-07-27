@@ -10,10 +10,24 @@ from collections import defaultdict
 from mygraph import *
 
 class Tarjan_SCC:
-    def __init__(self, mygraph):
-        # make a copy of the graph
-        self.graph =  mygraph.get_graph()
-        self.nodes = mygraph.get_nodes()
+    def __init__(self, mygraph = None):
+        if mygraph == None:
+            self.graph = dict()
+            self.nodes = set()
+        else:
+            self.graph = mygraph.get_graph()
+            self.nodes = mygraph.get_nodes()
+
+    def name(self):
+        return ("Tarjan's Algorithm")
+
+    def add_edge(self, u, v):
+        self.nodes.add(u)
+        self.nodes.add(v)
+        try:
+            self.graph[u].append(v)
+        except:
+            self.graph[u] = [v]
 
     def dfs(self, node):
         self.index[node] = self.index_counter[0]

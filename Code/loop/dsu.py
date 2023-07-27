@@ -25,6 +25,19 @@ class optimized_dsu:
         self.parent[a] = b
 
 class DSU:
+    def __init__(self, file = None):
+        if file == None:
+            self.lines = []
+        else:
+            f = open(file, "r")
+            self.lines = f.readlines()
+
+    def name(self):
+        return("Disjoin Set Union")
+
+    def add_edge(self, u, v):
+        self.lines.append([u,v])
+
     def load_file(self, file):
         f = open(file, "r")
         self.lines = f.readlines()
@@ -32,8 +45,7 @@ class DSU:
     def detect_loop(self):
         self.edges = []
         self.dsu = optimized_dsu(int(1e6))
-        for line in self.lines:
-            edge = [int(x) for x in line.split()]
+        for edge in self.lines:
             p0 = self.dsu.find(edge[0])
             p1 = self.dsu.find(edge[1])
 
