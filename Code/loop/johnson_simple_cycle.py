@@ -19,6 +19,7 @@ def simple_cycles(G):
 
     G = {v: set(nbrs) for (v, nbrs) in G.items()}  # make a copy of the graph
     sccs = strongly_connected_components(G)
+
     while sccs:
         scc = sccs.pop()
         startnode = scc.pop()
@@ -124,9 +125,20 @@ def subgraph(G, vertices):
 
 
 class Johnson:
-    def __init__(self, mygraph):
-        # make a copy of the graph
-        self.graph =  mygraph.get_graph()
+    def __init__(self, mygraph = None):
+        if mygraph == None:
+            self.graph = dict()
+        else:
+            self.graph = mygraph.get_graph()
+
+    def name(self):
+        return ("Johnson's Algorithm")
+
+    def add_edge(self, u, v):
+        try:
+            self.graph[u].append(v)
+        except:
+            self.graph[u] = [v]
 
     def find_cycles(self):
         return tuple(simple_cycles(self.graph))

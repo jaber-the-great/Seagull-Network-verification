@@ -14,6 +14,9 @@ class Undirected_BFS:
         self.visited = set()
         self.parent = dict()
 
+    def name(self):
+        return ("Breadth First Search")
+
     def add_edge(self, u, v):
         self.graph[u].append(v)
         self.graph[v].append(u)

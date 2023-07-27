@@ -7,20 +7,42 @@ from collections import defaultdict
 from mygraph import *
 
 class DFS:
-    def __init__(self, mygraph):
-        self.graph = mygraph.get_graph()
-        self.V = len(self.graph)
+    def __init__(self, mygraph=None):
+        # Stack
+        self.s = []
+        # Store Topological Order
+        self.tsort = []
         # To ensure visited vertex
         self.visited = set()
-        self.nodes = mygraph.get_nodes()
+
+        if mygraph == None:
+            self.graph = dict()
+            self.nodes = set()
+        else:
+            self.graph = mygraph.get_graph()
+            self.nodes = mygraph.get_nodes()
+    def __init__(self, mygraph = None):
+        # To ensure visited vertex
+        self.visited = set()
         self.stack = set()
 
+        if mygraph == None:
+            self.graph = dict()
+            self.nodes = set()
+        else:
+            self.graph = mygraph.get_graph()
+            self.nodes = mygraph.get_nodes()
+
+    def name(self):
+        return ("Depth First Search")
+
     def add_edge(self, u, v):
-        self.graph[u].append(v)
-        if not u in self.nodes:
-            self.nodes.append(u)
-        if not v in self.nodes:
-            self.nodes.append(v)
+        self.nodes.add(u)
+        self.nodes.add(v)
+        try:
+            self.graph[u].append(v)
+        except:
+            self.graph[u] = [v]
 
     # Function to perform DFS
     def dfs(self, u):
