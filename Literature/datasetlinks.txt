@@ -1,0 +1,12 @@
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-1/2010/cycle-aslinks.l7.t1.c000770.20100101.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-1/2010/cycle-aslinks.l7.t1.c000773.20100104.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-1/2019/cycle-aslinks.l7.t1.c007143.20190101.txt.gz/as-links/team-1/2019/cycle-aslinks.l7.t1.c007144.20190102.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-1/2019/cycle-aslinks.l7.t1.c007144.20190102.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-1/2020/cycle-aslinks.l7.t1.c008040.20200101.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-1/2020/cycle-aslinks.l7.t1.c008043.20200102.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-1/2018/cycle-aslinks.l7.t1.c006274.20180101.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-1/2018/cycle-aslinks.l7.t1.c006277.20180102.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-2/2018/cycle-aslinks.l7.t2.c006273.20180101.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-1/2019/cycle-aslinks.l7.t1.c007144.20190102.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-3/2018/cycle-aslinks.l7.t3.c006272.20180101.txt.gz
+https://publicdata.caida.org/datasets/topology/ark/ipv4/as-links/team-3/2018/cycle-aslinks.l7.t3.c006276.20180102.txt.gz
