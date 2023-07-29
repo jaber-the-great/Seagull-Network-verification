@@ -1,0 +1,46 @@
+/usr/local/bin/python3.9 /Volumes/SSDDrive/melody/rmp2023/Seagull-Netwrok-verification/Code/paper_code/experiment_4_paper.py
+
+Doing loop detecting using file  ../loop/data/280_AS_LCC_IPv6L.edgelist
+nodes =  280  edges =  1384
+Breadth First Search:  time =  0.0019  second
+Disjoin Set Union:  time =  0.0572 s
+Topology Sorting:  time =  0.0015 s
+Depth First Search:  time =  0.0011 s
+Tarjan's Algorithm:  time =  0.0015 s
+Johnson's Algorithm:  time =  0.0426 s
+
+Doing loop detecting using file  ../loop/data/1421_AS_LCC_Atlas.edgelist
+nodes =  1421  edges =  5500
+Breadth First Search:  time =  0.0063  second
+Disjoin Set Union:  time =  0.0459 s
+Topology Sorting:  time =  0.0067 s
+Depth First Search:  time =  0.0054 s
+Tarjan's Algorithm:  time =  0.0071 s
+Johnson's Algorithm:  time =  0.7315 s
+
+Doing loop detecting using file  ../loop/data/test_edge_list1.txt
+nodes =  283  edges =  400
+Breadth First Search:  time =  0.0008  second
+Disjoin Set Union:  time =  0.0486 s
+Topology Sorting:  time =  0.0006 s
+Depth First Search:  time =  0.0003 s
+Tarjan's Algorithm:  time =  0.0004 s
+Johnson's Algorithm:  time =  0.0137 s
+
+Doing loop detecting using file  ../loop/data/test_edge_list2.txt
+nodes =  775  edges =  1200
+Breadth First Search:  time =  0.0016  second 
+Disjoin Set Union:  time =  0.0481 s
+Topology Sorting:  time =  0.0019 s
+Depth First Search:  time =  0.0008 s
+Tarjan's Algorithm:  time =  0.0017 s
+Johnson's Algorithm:  time =  0.1767 s
+
+Doing loop detecting using file  data/node-20059-fib.edgelist
+nodes =  25061  edges =  25060
+Breadth First Search:  time =  0.0203  second
+Disjoin Set Union:  time =  0.0913 s
+Topology Sorting:  time =  0.0623 s
+Depth First Search:  time =  0.0436 s
+Tarjan's Algorithm:  time =  0.0749 s
+Johnson's Algorithm:  time =  21.3688 s
