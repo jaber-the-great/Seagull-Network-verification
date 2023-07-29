@@ -3,7 +3,7 @@
 # Original paper: Donald B Johnson. "Finding all the elementary circuits of a directed graph." SIAM Journal on Computing. 1975.
 
 from collections import defaultdict
-from mygraph import *
+
 
 def simple_cycles(G):
     # Yield every elementary cycle in python graph G exactly once
@@ -125,11 +125,9 @@ def subgraph(G, vertices):
 
 
 class Johnson:
-    def __init__(self, mygraph = None):
-        if mygraph == None:
-            self.graph = dict()
-        else:
-            self.graph = mygraph.get_graph()
+    def __init__(self):
+        self.graph = dict()
+
 
     def name(self):
         return ("Johnson's Algorithm")

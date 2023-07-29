@@ -6,17 +6,13 @@
 # Output: True/False
 # Questions contact: ocmelodyyu@gmail.com
 
-from collections import defaultdict
-from mygraph import *
+
 
 class Tarjan_SCC:
-    def __init__(self, mygraph = None):
-        if mygraph == None:
-            self.graph = dict()
-            self.nodes = set()
-        else:
-            self.graph = mygraph.get_graph()
-            self.nodes = mygraph.get_nodes()
+    def __init__(self):
+        self.graph = dict()
+        self.nodes = set()
+
 
     def name(self):
         return ("Tarjan's Algorithm")

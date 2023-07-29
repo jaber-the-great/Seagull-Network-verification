@@ -160,22 +160,22 @@ def experiment001(file):
         print("")
 
 
+def generate_fib_graph():
+    as_link_graph = As_Link_Graph('../loop/data/cycle-aslinks.l7.t1.c006274.20180101.txt')
+    as_link_graph.generate_as_link_graph()
 
+    print("Doing Loop detecting using file ../loop/data/cycle-aslinks.l7.t1.c006274.20180101.txt")
+    as_link_graph.get_stats()
 
-
-def experiment(fib_graph_edges):
-    alg = Edge_BFS(end_node)
-    print(alg.name() + ":", end=" ")
-    result, runtime = benchmark(alg, fib_graph_edges)
-    print("\t\t result = ", result, " time = ", runtime, " second", end=" ")
-    print("")
-
-    for ALG in [DSU, Topology, DFS, Tarjan_SCC, Johnson]:
-        alg = ALG()
-        print(alg.name() + ":", end=" ")
-        result, runtime = benchmark(alg, fib_graph_edges)
-        print("\t\t result = ", result, " time = ", runtime, " second", end=" ")
-        print("")
+    random_nodes = as_link_graph.generate_random_nodes(1)
+    for end_node in random_nodes:
+        fib_graph_edges = as_link_graph.generate_fib_graph(end_node)
+        print("fib graph len = ", len(fib_graph_edges))
+        file_name = 'data/node-' + str(end_node) + '-fib.edgelist'
+        output = open(file_name, 'w')
+        for e in fib_graph_edges:
+            output.write(str(e[0]) + " " + str(e[1]) + '\n')
+        output.close()
 
 
 
@@ -184,24 +184,10 @@ experiment001("../loop/data/1421_AS_LCC_Atlas.edgelist")
 experiment001("../loop/data/test_edge_list1.txt")
 experiment001("../loop/data/test_edge_list2.txt")
 
-as_link_graph = As_Link_Graph('../loop/data/cycle-aslinks.l7.t1.c006274.20180101.txt')
-as_link_graph.generate_as_link_graph()
-
-print("Doing Loop detecting using file ../loop/data/cycle-aslinks.l7.t1.c006274.20180101.txt")
-as_link_graph.get_stats()
-
-
-random_nodes = as_link_graph.generate_random_nodes(1)
-for end_node in random_nodes:
-    fib_graph_edges = as_link_graph.generate_fib_graph(end_node)
-    print("fib graph len = ", len(fib_graph_edges))
-    output = open('data/node-'+ str(end_node)+'-fib.edgelist', 'w')
-    for e in fib_graph_edges:
-        output.write(str(e[0]) + " " + str(e[1]) + '\n')
-    output.close()
-    experiment(fib_graph_edges)
+#run using FIB table edges
+experiment001("data/node-20059-fib.edgelist")
 
 
 
-    #print("node", end_node, "'s FIB", fib_graph)
+
 

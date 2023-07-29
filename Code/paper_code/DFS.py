@@ -4,20 +4,17 @@
 # M.Y @UCSB RMP 23
 
 from collections import defaultdict
-from mygraph import *
+
 
 class DFS:
-    def __init__(self, mygraph = None):
+    def __init__(self):
         # To ensure visited vertex
         self.visited = set()
         self.stack = set()
 
-        if mygraph == None:
-            self.graph = dict()
-            self.nodes = set()
-        else:
-            self.graph = mygraph.get_graph()
-            self.nodes = mygraph.get_nodes()
+        self.graph = dict()
+        self.nodes = set()
+
 
     def name(self):
         return ("Depth First Search")
