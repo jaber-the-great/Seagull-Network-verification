@@ -29,7 +29,7 @@ Johnson's Algorithm:  time =  0.0137 s
 
 Doing loop detecting using file  ../loop/data/test_edge_list2.txt
 nodes =  775  edges =  1200
-Breadth First Search:  time =  0.0016  second 
+Breadth First Search:  time =  0.0016  second
 Disjoin Set Union:  time =  0.0481 s
 Topology Sorting:  time =  0.0019 s
 Depth First Search:  time =  0.0008 s

@@ -1,52 +1,47 @@
-# SCALE-MAMBA Input 
 
+## Heuristic Loop Detection Algorithm using SCALE-MAMBA
 
-SCALE-MAMBA get input from stdin by default (without using C++ code to overwrite input).
-
-For example, the following code will read a secret int from stdin:
-
-sint.get_private_input_from(0)
-
-
-Linux pipe | can connect output content from another program (i.e. cat) and become
-stdin input for another program. 
-
-We use Linux cat to display content of input file and use Linux pipe to redirect to SCALE-MAMBA:
-
+compile:
 ```
-cat input.txt | SCALE-MAMBA-Player.x
+ ./compile-mamba.py -A -n -r -u -s Programs/heuristic_loop
+ ```
+
+run on party 0, cat the edge list from node-20015-fib.edgelist and send as stdin to SCALE MAMBA party 0
+turn on verbose mode for print_ln 
+```
+cat node-20015-fib.edgelist  | ./Player.x -verbose 1 0  Programs/heuristic_loop
 ```
 
-### SCALE-MAMBA
-
-Go to SCALE-MAMBA directory
-
+run on party 1 
 ```
-cd SCALE-MAMBA
-```
-The test code is under the directory 
-Programs/bfs_input/bfs_input.mpc 
-
-### Compile SCALE-MAMBA
-
-Use a directory (Programs/bfs_input) instead of file name (Programs/bfs_input/bfs_input.mpc) for compilation.
-
-```
-./compile.sh Programs/bfs_input
-```
- 
-### Example input 
-
-280_AS_LCC_IPv6L.edgelist
-File containing edges, each line contains src and dest node 
-
-Test to see the input file
-
-```
-cat Programs/bfs_input/280_AS_LCC_IPv6L.edgelist
+ ./Player.x -verbose 1 1 Programs/heuristic_loop
 ```
 
-### Instructions
+run on party 2
+```
+./Player.x -verbose 1 2  Programs/heuristic_loop
+```
+
+
+## Recover the graph using 3 party MPC using SCALE-MAMBA   
+
+
+
+
+### Split the original network edge list into 3 separate files
+
+Given an original graph edge data input.txt, store each node value into 3 seperated files and add together in SCALE MAMBA to recover the original node value.
+
+
+
+```
+python3 split-to-3-parties.py input.txt
+```
+
+which will generate in.1, in.2, in.3, which are three files containing (obfuscated) edge lists
+
+
+### SCALE-MAMBA Instructions
 
 Launch 3 terminals on the Linux machine (can be same or different machines)
 
@@ -54,18 +49,9 @@ terminal 0:
 
 Party 0
 
-Explaination of the command:
-- using Linux cat command to display content of the input file 
 ```
-- cat Programs/bfs_input/280_AS_LCC_IPv6L.edgelist  
-```
-- the cat output is sent to SCALE-MAMBA as stdin using Linux pipe | 
-```
-cat Programs/bfs_input/280_AS_LCC_IPv6L.edgelist |  ./Player.x  
-```
-- SCALE-MAMBA run using verbose level 1 to show print_ln(...), the 0 in the command line represent party 0 (terminal running on terminal 1 ) 
-```
- ./Player.x -verbose 1 0 Programs/bfs_input
+cd SCALE-MAMBA
+cat in.1 | ./Player.x -verbose 1 0 Programs/recover_network
 ```
 
 
@@ -75,28 +61,28 @@ Party 1
 
 ```
 cd SCALE-MAMBA
- ./Player.x -verbose 1 1 Programs/bfs_input
+cat in.2 | ./Player.x -verbose 1 1 Programs/recover_network
 ```
 
 terminal 2:
 
-Paryt 2
+Part 2
 
 ```
 cd SCALE-MAMBA
- ./Player.x -verbose 1 2 Programs/bfs_input
+cat in.3 | ./Player.x -verbose 1 2 Programs/recover_network
 ```
 
-You should see the following output from terminal 1
+You should see the following output from terminal 0
 
 ```
-melody@BunnyLinux:~/SCALE-MAMBA$ cat Programs/bfs_input/280_AS_LCC_IPv6L.edgelist |  ./Player.x -verbose 1 0 Programs/bfs_input
+melody@BunnyLinux:~/SCALE-MAMBA$ cat in.1 | ./Player.x -verbose 1 0 Programs/recover_network 
 + '[' '' == 1 ']'
-+ ./PlayerBinary.x -verbose 1 0 Programs/bfs_input
++ ./PlayerBinary.x -verbose 1 0 Programs/recover_network
 
 No FHE Factories 2
 Port Num Base 5000
-Portnums :
+Portnums : 
 Verbose 1
 maxI = 0
 (Min,Max) number of ...
@@ -123,38 +109,107 @@ p=340282366920938463463374607431768211507
 Using Mod2Engine system for the binary circuit processing
   - This uses Replicated sharing mod 2
 
-Opening file Programs/bfs_input/bfs_input.sch
+Opening file Programs/recover_network/recover_network.sch
 Number of online threads I will run in parallel =  1
 Number of program sequences I need to load =  1
-Loading program 0 from Programs/bfs_input/bfs_input-0.bc
+Loading program 0 from Programs/recover_network/recover_network-0.bc
 All connections now done
 Setting up threads
-I am player 0 in thread 1
-I am player 0 in thread 2
+I am player 0 in thread 0
+Waiting for thread 0 to be ready
 I am player 0 in thread 3
 I am player 0 in thread 20000
-Waiting for thread 0 to be ready
-...
-nnel 0 : Input channel 0 : Input channel 0 : Input channel 0 : Input channel 0 : Input channel 0 : Input channel 0 : Input channel 0 : Input channel 0 : the first 10 edges
-[0]: src = 14618, dst = 1273
-[1]: src = 14618, dst = 16509
-[2]: src = 14618, dst = 1257
-[3]: src = 14618, dst = 7908
-[4]: src = 13101, dst = 3257
-[5]: src = 13101, dst = 6695
-[6]: src = 13101, dst = 29551
-[7]: src = 13101, dst = 3356
-[8]: src = 13101, dst = 12731
-[9]: src = 13101, dst = 1200
-Compiler: ./compile-mamba.py -A -n -r -u -s Programs/bfs_input
-Waiting for all clients to finish
+I am player 0 in thread 1
+I am player 0 in thread 2
+I am player 0 in thread 4
+Set up player 0 in thread 20000 
+Set up player 0 in thread 1 
+Set up player 0 in thread 4 
+Doing online for player 0 in online thread 0
+Starting online phase 0
+Set up player 0 in thread 0 
+Set up player 0 in thread 2 
+Set up player 0 in thread 3 
+Signal online thread ready 0
+Opening channel 0
+Sacrifice Queues : thread = 0 : 0 0 0 : 10000 10000 10000 
+Seconds per Mult Triple (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per Square Pair (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per Bit (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per `Thing` (all threads) inf : Total 0.000000 : Throughput 0.000000
+Sacrifice Queues : thread = 0 : 0 0 0 : 20000 20000 20000 
+Seconds per Mult Triple (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per Square Pair (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per Bit (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per `Thing` (all threads) inf : Total 0.000000 : Throughput 0.000000
+Input channel 0 : Input channel 0 : Input channel 0 : Input channel 0 : received FIB from party 0: 1, 1
+received FIB from party 1: 2, 2
+received FIB from party 2: 3, 3
+get magic output [0] = (6, 6)
+get magic output [1] = (60, 60)
+Closing channel 0
+Compiler: ./compile-mamba.py -A -n -r -u -s Programs/recover_network
 Waiting for all clients to finish
 	Thread 0 terminating
+Waiting for all clients to finish
 Exiting online phase : 0
-Sent 2788 elements in 2778 rounds
+Sent 22 elements in 17 rounds
 <b3m4>
-Number instructions executed in online thread 0 is 11249
+Number instructions executed in online thread 0 is 271 
 </b3m4>
+Sacrifice Queues : thread = 0 : 0 0 0 : 29996 29996 29996 
+Seconds per Mult Triple (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per Square Pair (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per Bit (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per `Thing` (all threads) inf : Total 0.000000 : Throughput 0.000000
+Sacrifice Queues : thread = 0 : 0 0 0 : 29996 29996 29996 
+Seconds per Mult Triple (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per Square Pair (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per Bit (all threads) inf : Total 0.000000 : Throughput 0.000000
+Seconds per `Thing` (all threads) inf : Total 0.000000 : Throughput 0.000000
+Exiting inputs phase : thread = 0
 Batch Size = (1048576,64)
-	Per Second = 2.58312e+06
+	Per Second = 3.07723e+06
+Batch Size = (1048576,128)
+	Per Second = 4.67998e+06
+Exiting square phase: thread = 0
+Exiting mult phase : thread = 0
+Joined Thread 0
+Joined Thread 1
+Batch Size = (1048576,256)
+	Per Second = 5.32947e+06
+Batch Size = (1048576,512)
+	Per Second = 5.57774e+06
+Batch Size = (1048576,1024)
+	Per Second = 5.7398e+06
+Exiting bit phase: thread = 0
+Joined Thread 2
+Joined Thread 3
+Joined Thread 4
+Batch Size = (1048576,2048)
+	Per Second = 6.23223e+06
+Best performance when L = 2048
+	Per Second = 6.23223e+06
+Finished Tuning: Generated 6545472 triples
+Chosen L = 2048
+Exiting Mod2 Triple production thread
+Joined Thread 5
+Total Time (with thread locking) = 1.40003 seconds
+Produced a total of 29952 triples
+Produced a total of 30208 squares
+Produced a total of 59904 bits
+End of prog
+
 ```
+
+
+## BFS using SCALE-MAMBA   
+
+The file is bfs_loop.mpc, but I don't know how to run loop detection BFS using SCALE-MAMBA loops.
+bfs_loop.mpc. 
+
+Main issue:
+* Can not use Python loops for BFS as Python loop is evaluated during compilation time 
+* As Python loop will be unrolled, a large network will cause huge amount of unrolled assembly code
+* Do not know how to efficiently determine a node has been visited or not execept using a brute force loop 
+

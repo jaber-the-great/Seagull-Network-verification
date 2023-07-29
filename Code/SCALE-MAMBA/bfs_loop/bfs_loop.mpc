@@ -1,43 +1,67 @@
 from datetime import datetime
 
-NumOfEdges = 3000
+MAX_NODES = 10000
+NumOfNodes =  10
+DestNode = NumOfNodes
 
-#read in start node and dest node
-StartNode = sint.get_private_input_from(0)
-DestNode = sint.get_private_input_from(0)
+edges = sint.Matrix(NumOfNodes , 2)
+edges[0][0] = 1
+edges[0][1] = 3
+edges[1][0] = 2
+edges[1][1] = 5
+edges[2][0] = 3
+edges[2][1] = 5
+edges[3][0] = 4
+edges[3][1] = 6
+edges[4][0] = 5
+edges[4][1] = 6
+edges[5][0] = 6
+edges[5][1] = 10
+edges[6][0] = 8
+edges[6][1] = 9
+edges[7][0] = 9
+edges[7][1] = 10
+edges[8][0] = 7
+edges[8][1] = 3
 
-print_ln("Start node = %s, Destination node = %s", StartNode.reveal(), DestNode.reveal())
 
-edges = sint.Matrix(NumOfEdges, 2)
-# read in the edge list
-for i in range(NumOfEdges):
-   edges[i][0] = sint.get_private_input_from(0)
-   edges[i][1] = sint.get_private_input_from(0)
-   print_ln("%s :  %s, %s", i, edges[i][0].reveal(), edges[i][1].reveal())
+#visited set
+visited_set = Array(MAX_NODES,sint)
 
-visited = Array(NumOfEdges,sint)
-curr  = StartNode
-cnt = 0
-found_loop = False
-for t in range(15):
-    for i in range(NumOfEdges):
-        if edges[i][0] == curr:
-            if edges[i][1] in visited:
-                found_loop = True
-                break
-            else:
-                visited[cnt] = edges[i][1]
-                curr = edges[i][1]
+#visited order
+order = Array(NumOfNodes+1,sint)
+
+order[0] = DestNode
+
+
+cnt = 1
+flag1 = True
+start_time = datetime.now()
+
+@do_while flag1:
+def loop_body():
+    flag1 = False
+    @for_range(NumOfNodes-1)
+    def range_body(i):
+        for i in range(NumOfNodes-1):
+            if_then (visited_set[edges[i][1]] == 1 and visited_set[edges[i][0] == 0):
+                order[cnt] = edges[i][0]
+	        visited_set[edges[i][0] = 1
                 cnt = cnt+1
-                running=True
+                flag1=True
+            end_if()
+    return flag1 == False
 
-    if found_loop:
-        break
+print_ln("The visited nodes in BFS order:")
+@for_range(len(visited))
+def range_body(i):
+    print_ln("[%s]:  %s", i,  order[i].reveal())
 
-if cnt == 15:
-   print_ln("went through 15 hops")
-elif found_loop or cnt == 15:
-   print_ln("found loop")
+print_ln("The number of visited nodes: %d" % (cnt))
+if cnt == NumOfNodes:
+    print_ln("The network is loop free")
 else:
-   print_ln("no loop detected")
-   
+    print_ln("The network  is NOT loop free")
+
+end_time = datetime.now()
+print_ln('Duration: {}'.format(end_time - start_time))
