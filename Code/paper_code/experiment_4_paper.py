@@ -118,7 +118,7 @@ class As_Link_Graph:
         return random_nodes
 
 def benchmark(alg, edges):
-    rounds = 1
+    rounds = 5
     t1 = time.time()
     for round in range(rounds):
         for e in edges:
