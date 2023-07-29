@@ -1,4 +1,4 @@
-python experiment_4_paper.py
+python3 experiment_4_paper.py
 
 Doing loop detecting using file  data/node-2381-fib.edgelist
 nodes =  25061  edges =  25066

@@ -117,16 +117,26 @@ class As_Link_Graph:
 
         return random_nodes
 
-def benchmark(alg, edges):
+def benchmark(ALG, edges, node = None):
+    if node == None:
+        alg = ALG()
+    else:
+        alg = ALG(node)
+    print(alg.name() + ":", end=" ")
+
     rounds = 5
     t1 = time.time()
     for round in range(rounds):
+        if node == None:
+            alg = ALG()
+        else:
+            alg = ALG(node)
         for e in edges:
             alg.add_edge(e[0], e[1])
-    result = alg.detect_loop()
+        result = alg.detect_loop()
     t2 = time.time()
     t = (t2 - t1) / rounds
-    return result, f"{t:0,.4f}"
+    return f"{t:0,.4f}"
 
 def experiment001(file):
     print("\nDoing loop detecting using file ", file)
@@ -146,16 +156,13 @@ def experiment001(file):
     print("nodes = ", len(nodes), " edges = ", len(lines))
 
     alg = Edge_BFS(last_node)
-    print(alg.name() + ":", end=" ")
-    result, runtime = benchmark(alg, edges)
+    runtime = benchmark(Edge_BFS, edges, last_node)
     print(" time = ", runtime, " second", end=" ")
     print("")
 
 
     for ALG in [DSU, Topology, DFS, Tarjan_SCC, Johnson]:
-        alg = ALG()
-        print(alg.name() + ":", end=" ")
-        result, runtime = benchmark(alg, edges)
+        runtime = benchmark(ALG, edges)
         print(" time = ", runtime, "s", end=" ")
         print("")
 
