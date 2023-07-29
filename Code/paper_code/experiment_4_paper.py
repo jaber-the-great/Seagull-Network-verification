@@ -179,13 +179,13 @@ def generate_fib_graph():
 
 
 
-experiment001("../loop/data/280_AS_LCC_IPv6L.edgelist")
-experiment001("../loop/data/1421_AS_LCC_Atlas.edgelist")
-experiment001("../loop/data/test_edge_list1.txt")
-experiment001("../loop/data/test_edge_list2.txt")
 
 #run using FIB table edges
+experiment001("data/node-2381-fib.edgelist")
 experiment001("data/node-20059-fib.edgelist")
+experiment001("data/node-3746-fib.edgelist")
+experiment001("data/node-4703-fib.edgelist")
+experiment001("data/node-10843-fib.edgelist")
 
 
 
