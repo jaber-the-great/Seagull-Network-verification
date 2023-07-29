@@ -3,9 +3,7 @@
 # Output: True/False
 # M.Y @UCSB RMP 23
 
-from collections import defaultdict
-from mygraph import *
-from collections import deque
+
 
 class optimized_dsu:
     def __init__(self, n):

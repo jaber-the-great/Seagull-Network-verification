@@ -3,24 +3,19 @@
 # Output: True/False
 # Questions contact: ocmelodyyu@gmail.com
 
-from collections import defaultdict
-from mygraph import *
+
 
 class Topology:
-    def __init__(self, mygraph = None):
+    def __init__(self):
         # Stack
         self.s = []
         # Store Topological Order
         self.tsort = []
         # To ensure visited vertex
         self.visited = set()
+        self.graph = dict()
+        self.nodes = set()
 
-        if mygraph == None:
-            self.graph = dict()
-            self.nodes = set()
-        else:
-            self.graph = mygraph.get_graph()
-            self.nodes = mygraph.get_nodes()
 
     def name(self):
         return ("Topology Sorting")
