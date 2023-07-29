@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Directory for the source code
 
 ### Loop detection code:
@@ -29,3 +30,7 @@
 ### Output:
 * Stop the algorithm when the loop is detected (eg do not need to discover all of the nodes in BFS if you detect a loop)
 * Output is true or false 
+=======
+# Seagull-Network-verification
+Repository of Large scale privacy preserving network verification 
+>>>>>>> 6de26eecb1d7ce87a3706071fdd6c664eda63785

@@ -158,13 +158,9 @@ def experiment001(file):
         print("\t\t result = ", result, " time = ", runtime, "s", end=" ")
         print("")
 
-'''
-experiment001("data/280_AS_LCC_IPv6L.edgelist")
-experiment001("data/1421_AS_LCC_Atlas.edgelist")
 
-experiment001("data/test_edge_list1.txt")
-experiment001("data/test_edge_list2.txt")
-'''
+
+
 
 def experiment(fib_graph_edges):
     alg = Edge_BFS(end_node)
@@ -180,6 +176,12 @@ def experiment(fib_graph_edges):
         print("\t\t result = ", result, " time = ", runtime, " second", end=" ")
         print("")
 
+
+
+experiment001("data/280_AS_LCC_IPv6L.edgelist")
+experiment001("data/1421_AS_LCC_Atlas.edgelist")
+experiment001("data/test_edge_list1.txt")
+experiment001("data/test_edge_list2.txt")
 
 as_link_graph = As_Link_Graph('data/cycle-aslinks.l7.t1.c006274.20180101.txt')
 as_link_graph.generate_as_link_graph()
