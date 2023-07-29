@@ -148,7 +148,7 @@ def experiment001(file):
     alg = Edge_BFS(last_node)
     print(alg.name() + ":", end=" ")
     result, runtime = benchmark(alg, edges)
-    print("\t\t result = ", result, " time = ", runtime, " second", end=" ")
+    print(" time = ", runtime, " second", end=" ")
     print("")
 
 
@@ -156,7 +156,7 @@ def experiment001(file):
         alg = ALG()
         print(alg.name() + ":", end=" ")
         result, runtime = benchmark(alg, edges)
-        print("\t\t result = ", result, " time = ", runtime, "s", end=" ")
+        print(" time = ", runtime, "s", end=" ")
         print("")
 
 
