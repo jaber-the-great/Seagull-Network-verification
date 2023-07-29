@@ -1,4 +1,4 @@
-/usr/local/bin/python3.9 /Volumes/SSDDrive/melody/rmp2023/Seagull-Netwrok-verification/Code/paper_code/experiment_4_paper.py 
+python experiment_4_paper.py
 
 Doing loop detecting using file  data/node-2381-fib.edgelist
 nodes =  25061  edges =  25066
@@ -43,4 +43,4 @@ Disjoin Set Union:  time =  0.0850 s
 Topology Sorting:  time =  0.0664 s 
 Depth First Search:  time =  0.0519 s 
 Tarjan's Algorithm:  time =  0.0729 s 
-Johnson's Algorithm:  time =  22.0689 s 
+Johnson's Algorithm:  time =  22.0689 s
