@@ -1,7 +1,6 @@
 # Loop detection using DSU
 # Input: number of vertices, list of edges
 # Output: True/False
-# M.Y @UCSB RMP 23
 
 from collections import defaultdict
 from mygraph import *

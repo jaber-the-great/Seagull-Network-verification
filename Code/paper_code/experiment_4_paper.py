@@ -1,6 +1,5 @@
 # Experiment using AS link snapshot to detect loops
-# July, 25, 2023
-# M.Y @UCSB RMP 23
+
 import sys
 import time
 

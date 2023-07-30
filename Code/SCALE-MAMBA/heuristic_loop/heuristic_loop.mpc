@@ -15,18 +15,17 @@ for i in range(NumOfEdges):
    edges[i][1] = sint.get_private_input_from(0)
    print_ln("%s :  %s, %s", i, edges[i][0].reveal(), edges[i][1].reveal())
 
-visited = Array(NumOfEdges,sint)
+
 curr  = StartNode
 cnt = 0
 found_loop = False
 for t in range(15):
     for i in range(NumOfEdges):
         if edges[i][0] == curr:
-            if edges[i][1] in visited:
+            if edges[i][1] == DestNode:
                 found_loop = True
                 break
             else:
-                visited[cnt] = edges[i][1]
                 curr = edges[i][1]
                 cnt = cnt+1
                 running=True
@@ -34,9 +33,7 @@ for t in range(15):
     if found_loop:
         break
 
-if cnt == 15:
-   print_ln("went through 15 hops")
-elif found_loop or cnt == 15:
+f found_loop or cnt == 15:
    print_ln("found loop")
 else:
    print_ln("no loop detected")

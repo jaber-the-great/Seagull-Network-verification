@@ -1,7 +1,7 @@
 # Simple Graph
 # Input: number of vertices, add edges
 # Output: adj based graph
-# Questions contact: ocmelodyyu@gmail.com
+
 
 class MyGraph:
     def __init__(self, vertices):
