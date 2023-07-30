@@ -1,0 +1,238 @@
+
+
+
+
+
+
+
+
+
+
+    small_loop     
+Running 
+	 ./compile-mamba.py -A -n -r -u -s Programs/small_loop 
+
+Compiling program in Programs/small_loop
+small_loop
+p = 340282366920938463463374607431768211507
+Prime size: 128
+Default bit length: 64
+Default statistical security parameter: 40
+Under Over Flow flag:  True
+Compiling file Programs/small_loop/small_loop.mpc
+Compiling basic block small_loop-0--0
+The visited nodes in BFS order:
+<Compiler.types.Array object at 0x7fe1cc567cd0>
+The number of visited nodes: 1
+The network  is NOT loop free
+Duration: 0:00:00.396484
+Processing tape small_loop-0 with 1 blocks
+Not merging open instructions in tape small_loop-0
+Compile offline data requirements...
+Tape requires 1134 triples in modp, 1872 bits in modp
+Tape requires prime bit length 105
+Program requires: {('modp', 'triple'): 1134, ('modp', 'bit'): 1872}
+Memory size: defaultdict(<function <lambda> at 0x7fe1cc5682d0>, {'sr': 8192, 'c': 8192, 'r': 8192, 's': 8220, 'sb': 8192})
+Writing to Programs/small_loop/small_loop.sch
+Writing to Programs/small_loop/small_loop-0.asm
+
+Now running 
+	./scasm Programs/small_loop 
+
+reading all `.asm` files in Programs/small_loop
+processing: Programs/small_loop/small_loop-0.asm... 
+apply_default_optimization_pipeline: validate
+apply_default_optimization_pipeline: dummy
+apply_default_optimization_pipeline: print_structure
+apply_default_optimization_pipeline: print_merge
+apply_default_optimization_pipeline: start_stop_open
+apply_default_optimization_pipeline: merge_instructions
+apply_default_optimization_pipeline: nop_removal
+apply_default_optimization_pipeline: destination_propagation
+	Ignoring destination propagation optimization due to there being a total of  23332 instructions
+apply_default_optimization_pipeline: assignment_chain
+apply_default_optimization_pipeline: cmp
+apply_default_optimization_pipeline: dce
+apply_default_optimization_pipeline: nop_removal
+apply_default_optimization_pipeline: goto_chain_collapse
+apply_default_optimization_pipeline: dead_block_removal
+apply_default_optimization_pipeline: move_done_block_to_end
+apply_default_optimization_pipeline: register_coloring
+apply_default_optimization_pipeline: nop_removal
+apply_default_optimization_pipeline: cond_flip
+apply_default_optimization_pipeline: validate
+
+
+no previous processes running
+no previous processes running
+trying with player 0
+trying with player 1
++ '[' '' == 1 ']'
++ '[' '' == 1 ']'
++ ./PlayerBinary.x 1 -f 1 Programs/small_loop
++ ./PlayerBinary.x 0 -f 1 Programs/small_loop
+
+No FHE Factories 1
+Port Num Base 5000
+Portnums : 
+
+No FHE Factories 1
+Port Num Base 5000
+Portnums : 
+Verbose 0
+maxI = 0
+Verbose 0
+maxI = 0
+(Min,Max) number of ...
+	(0,infty) multiplication triples
+	(0,infty) square pairs
+	(0,infty) bits
+
+0
+127.0.0.1
+Player1.crt
+P1
+1
+127.0.0.1
+Player2.crt
+P2
+2
+127.0.0.1
+Player3.crt
+P3
+(Min,Max) number of ...
+	(0,infty) multiplication triples
+	(0,infty) square pairs
+	(0,infty) bits
+
+0
+127.0.0.1
+Player1.crt
+P1
+1
+127.0.0.1
+Player2.crt
+P2
+2
+127.0.0.1
+Player3.crt
+P3
+
+
+p=340282366920938463463374607431768211507
+
+
+p=340282366920938463463374607431768211507
+
+Using Mod2Engine system for the binary circuit processing
+  - This uses Replicated sharing mod 2
+
+
+Using Mod2Engine system for the binary circuit processing
+  - This uses Replicated sharing mod 2
+
+Opening file Programs/small_loop/small_loop.sch
+Number of online threads I will run in parallel =  1
+Number of program sequences I need to load =  1
+Loading program 0 from Programs/small_loop/small_loop-0.bc
+Opening file Programs/small_loop/small_loop.sch
+Number of online threads I will run in parallel =  1
+Number of program sequences I need to load =  1
+Loading program 0 from Programs/small_loop/small_loop-0.bc
+All connections now done
+Setting up threads
+I am player 1 in thread 0
+I am player 1 in thread 1
+All connections now done
+Setting up threads
+I am player 1 in thread 2
+I am player 0 in thread 0
+Waiting for thread 0 to be ready
+I am player 1 in thread 3
+Waiting for thread 0 to be ready
+I am player 0 in thread 20000
+I am player 0 in thread 1
+I am player 1 in thread 4
+I am player 0 in thread 2
+I am player 1 in thread 20000
+I am player 0 in thread 4
+I am player 0 in thread 3
+Set up player 0 in thread 2 
+Set up player 0 in thread 3 
+Set up player 0 in thread 20000 
+Set up player 0 in thread 0 
+Set up player 0 in thread 4 
+Doing online for player 0 in online thread 0
+Starting online phase 0
+Set up player 0 in thread 1 
+Set up player 1 in thread 2 
+Set up player 1 in thread 3 
+Set up player 1 in thread 1 
+Set up player 1 in thread 0 
+Set up player 1 in thread 20000 
+Set up player 1 in thread 4 
+Doing online for player 1 in online thread 0
+Signal online thread ready 0
+Signal online thread ready 0
+Starting online phase 0
+Compiler: ./compile-mamba.py -A -n -r -u -s Programs/small_loop
+Waiting for all clients to finish
+Waiting for all clients to finish
+	Thread 0 terminating
+Compiler: ./compile-mamba.py -A -n -r -u -s Programs/small_loop
+Waiting for all clients to finish
+	Thread 0 terminating
+Waiting for all clients to finish
+Sent 2286 elements in 7 rounds
+Sent 2286 elements in 7 rounds
+Exiting online phase : 0
+[1m[31m<b3m4>
+Number instructions executed in online thread 0 is 23152 
+</b3m4>
+[0mExiting inputs phase : thread = 0
+Exiting square phase: thread = 0
+Exiting Mod2 Triple production thread
+Exiting mult phase : thread = 0
+Joined Thread 0
+Joined Thread 1
+Exiting online phase : 0
+[1m[31m<b3m4>
+Number instructions executed in online thread 0 is 23152 
+</b3m4>
+[0mExiting inputs phase : thread = 0
+Exiting square phase: thread = 0
+Exiting Mod2 Triple production thread
+Exiting mult phase : thread = 0
+Joined Thread 0
+Joined Thread 1
+Exiting bit phase: thread = 0
+Joined Thread 2
+Joined Thread 3
+Joined Thread 4
+Joined Thread 5
+Total Time (with thread locking) = 5.09767 seconds
+Produced a total of 89856 triples
+Produced a total of 120832 squares
+Produced a total of 119808 bits
+Exiting bit phase: thread = 0
+Joined Thread 2
+Joined Thread 3
+Joined Thread 4
+Joined Thread 5
+Total Time (with thread locking) = 5.09828 seconds
+Produced a total of 89856 triples
+Produced a total of 120832 squares
+Produced a total of 119808 bits
+End of prog
+End of prog
+        WAITING      
+p = 340282366920938463463374607431768211507
+param = 136
+byte_length = 24
+size_c = 1048576  size_s =1048576
+
+The visited nodes in BFS order:
+[10L, 6L, 9L, 4L, 5L, 8L, 2L, 0L, 0L, 0L]
+The number of visited nodes: 7
+The network  is NOT loop free
+Duration: 0:00:00.000419
