@@ -1,0 +1,242 @@
+
+
+
+
+
+
+
+
+
+
+    general_loop    
+Running 
+	 ./compile-mamba.py -A -n -r -u -s Programs/general_loop 
+
+Compiling program in Programs/general_loop
+general_loop
+p = 340282366920938463463374607431768211507
+Prime size: 128
+Default bit length: 64
+Default statistical security parameter: 40
+Under Over Flow flag:  True
+Compiling file Programs/general_loop/general_loop.mpc
+Compiling basic block general_loop-0--0
+Compiled 100000 lines at Tue Jan 11 16:05:05 2022
+Compiled 200000 lines at Tue Jan 11 16:05:07 2022
+Compiled 300000 lines at Tue Jan 11 16:05:08 2022
+Compiled 400000 lines at Tue Jan 11 16:05:10 2022
+The visited nodes in BFS order:
+<Compiler.types.Array object at 0x7f9331ef1d10>
+The number of visited nodes: 280
+The network is loop free
+Duration: 0:00:06.594348
+Processing tape general_loop-0 with 1 blocks
+Not merging open instructions in tape general_loop-0
+Compile offline data requirements...
+Tape requires 17577 triples in modp, 29016 bits in modp
+Tape requires prime bit length 105
+Program requires: {('modp', 'triple'): 17577, ('modp', 'bit'): 29016}
+Memory size: defaultdict(<function <lambda> at 0x7f9331ef22d0>, {'sr': 8192, 'c': 8192, 'r': 8192, 's': 9030, 'sb': 8192})
+Writing to Programs/general_loop/general_loop.sch
+Writing to Programs/general_loop/general_loop-0.asm
+
+Now running 
+	./scasm Programs/general_loop 
+
+reading all `.asm` files in Programs/general_loop
+processing: Programs/general_loop/general_loop-0.asm... 
+apply_default_optimization_pipeline: validate
+apply_default_optimization_pipeline: dummy
+apply_default_optimization_pipeline: print_structure
+apply_default_optimization_pipeline: print_merge
+apply_default_optimization_pipeline: start_stop_open
+apply_default_optimization_pipeline: merge_instructions
+apply_default_optimization_pipeline: nop_removal
+apply_default_optimization_pipeline: destination_propagation
+	Ignoring destination propagation optimization due to there being a total of  362722 instructions
+apply_default_optimization_pipeline: assignment_chain
+apply_default_optimization_pipeline: cmp
+apply_default_optimization_pipeline: dce
+apply_default_optimization_pipeline: nop_removal
+apply_default_optimization_pipeline: goto_chain_collapse
+apply_default_optimization_pipeline: dead_block_removal
+apply_default_optimization_pipeline: move_done_block_to_end
+apply_default_optimization_pipeline: register_coloring
+apply_default_optimization_pipeline: nop_removal
+apply_default_optimization_pipeline: cond_flip
+apply_default_optimization_pipeline: validate
+
+
+no previous processes running
+no previous processes running
+trying with player 0
+trying with player 1
++ '[' '' == 1 ']'
++ '[' '' == 1 ']'
++ ./PlayerBinary.x 1 -f 1 Programs/general_loop
++ ./PlayerBinary.x 0 -f 1 Programs/general_loop
+
+No FHE Factories 1
+Port Num Base 5000
+Portnums : 
+Verbose 0
+maxI = 0
+(Min,Max) number of ...
+	(0,infty) multiplication triples
+	(0,infty) square pairs
+	(0,infty) bits
+
+0
+127.0.0.1
+Player1.crt
+P1
+1
+127.0.0.1
+Player2.crt
+P2
+2
+127.0.0.1
+Player3.crt
+P3
+
+No FHE Factories 1
+Port Num Base 5000
+Portnums : 
+Verbose 0
+maxI = 0
+(Min,Max) number of ...
+	(0,infty) multiplication triples
+	(0,infty) square pairs
+	(0,infty) bits
+
+0
+127.0.0.1
+Player1.crt
+P1
+1
+127.0.0.1
+Player2.crt
+P2
+2
+127.0.0.1
+Player3.crt
+P3
+
+
+p=340282366920938463463374607431768211507
+
+
+p=340282366920938463463374607431768211507
+
+Using Mod2Engine system for the binary circuit processing
+  - This uses Replicated sharing mod 2
+
+
+Using Mod2Engine system for the binary circuit processing
+  - This uses Replicated sharing mod 2
+
+Opening file Programs/general_loop/general_loop.sch
+Number of online threads I will run in parallel =  1
+Number of program sequences I need to load =  1
+Loading program 0 from Programs/general_loop/general_loop-0.bc
+Opening file Programs/general_loop/general_loop.sch
+Number of online threads I will run in parallel =  1
+Number of program sequences I need to load =  1
+Loading program 0 from Programs/general_loop/general_loop-0.bc
+All connections now done
+Setting up threads
+All connections now done
+Setting up threads
+I am player 1 in thread 0
+Waiting for thread 0 to be ready
+Waiting for thread 0 to be ready
+I am player 1 in thread 4
+I am player 0 in thread 20000
+I am player 1 in thread 20000
+I am player 0 in thread 1
+I am player 0 in thread 0
+I am player 1 in thread 3
+I am player 0 in thread 2
+I am player 0 in thread 3
+I am player 1 in thread 2
+I am player 1 in thread 1
+I am player 0 in thread 4
+Set up player 0 in thread 1 
+Set up player 0 in thread 20000 
+Set up player 0 in thread 4 
+Doing online for player 0 in online thread 0
+Starting online phase 0
+Set up player 0 in thread 2 
+Set up player 0 in thread 0 
+Set up player 0 in thread 3 
+Set up player 1 in thread 20000 
+Set up player 1 in thread 3 
+Set up player 1 in thread 4 
+Doing online for player 1 in online thread 0
+Starting online phase 0
+Set up player 1 in thread 2 
+Signal online thread ready 0
+Signal online thread ready 0
+Set up player 1 in thread 0 
+Set up player 1 in thread 1 
+Compiler: ./compile-mamba.py -A -n -r -u -s Programs/general_loop
+Waiting for all clients to finish
+Compiler: ./compile-mamba.py -A -n -r -u -s Programs/general_loop
+Waiting for all clients to finish
+Waiting for all clients to finish
+	Thread 0 terminating
+Waiting for all clients to finish
+	Thread 0 terminating
+Sent 35433 elements in 7 rounds
+Sent 35433 elements in 7 rounds
+Exiting online phase : 0
+[1m[31m<b3m4>
+Number instructions executed in online thread 0 is 359932 
+</b3m4>
+[0mExiting square phase: thread = 0
+Exiting inputs phase : thread = 0
+Exiting Mod2 Triple production thread
+Exiting mult phase : thread = 0
+Joined Thread 0
+Joined Thread 1
+Exiting online phase : 0
+Exiting square phase: thread = 0
+[1m[31m<b3m4>
+Number instructions executed in online thread 0 is 359932 
+</b3m4>
+[0mExiting inputs phase : thread = 0
+Exiting Mod2 Triple production thread
+Exiting mult phase : thread = 0
+Joined Thread 0
+Joined Thread 1
+Exiting bit phase: thread = 0
+Joined Thread 2
+Joined Thread 3
+Joined Thread 4
+Joined Thread 5
+Total Time (with thread locking) = 5.49405 seconds
+Produced a total of 89856 triples
+Produced a total of 120832 squares
+Produced a total of 119808 bits
+Exiting bit phase: thread = 0
+Joined Thread 2
+Joined Thread 3
+Joined Thread 4
+Joined Thread 5
+Total Time (with thread locking) = 5.49507 seconds
+Produced a total of 89856 triples
+Produced a total of 120832 squares
+Produced a total of 119808 bits
+        WAITING      
+End of prog
+End of prog
+p = 340282366920938463463374607431768211507
+param = 136
+byte_length = 24
+size_c = 1048576  size_s =1048576
+
+The visited nodes in BFS order:
+[1273L, 14618L, 286L, 5511L, 12389L, 6774L, 3292L, 1668L, 9989L, 6453L, 174L, 16509L, 1257L, 3267L, 3549L, 6939L, 36944L, 701L, 20485L, 3320L, 1200L, 3257L, 49800L, 1299L, 12956L, 4637L, 6083L, 4788L, 31621L, 7018L, 5539L, 4775L, 3356L, 5459L, 5568L, 9381L, 6762L, 7908L, 24785L, 8529L, 5580L, 8218L, 2828L, 513L, 41552L, 34984L, 6695L, 17451L, 22773L, 3265L, 15412L, 25973L, 2914L, 12731L, 24940L, 703L, 44237L, 8342L, 3249L, 3491L, 15169L, 8330L, 702L, 51040L, 1239L, 3301L, 2497L, 6461L, 32934L, 45147L, 9498L, 36351L, 9505L, 3303L, 7713L, 55818L, 20940L, 10026L, 1103L, 7922L, 15399L, 209L, 1145L, 4766L, 10310L, 8978L, 7545L, 13237L, 38158L, 4323L, 8517L, 24211L, 7843L, 56308L, 1280L, 25137L, 34288L, 4436L, 41833L, 39369L, 50683L, 3741L, 29076L, 16150L, 12741L, 12989L, 6503L, 13092L, 5713L, 20965L, 2614L, 7473L, 766L, 42708L, 137L, 22548L, 28885L, 37958L, 2847L, 33554L, 2128L, 2603L, 13030L, 11164L, 16276L, 1880L, 9002L, 2895L, 3216L, 9121L, 9264L, 29208L, 50066L, 30890L, 39743L, 42173L, 2611L, 5483L, 12306L, 37105L, 34171L, 2907L, 36086L, 10745L, 2152L, 4725L, 101L, 12337L, 786L, 8422L, 12859L, 8928L, 12874L, 43013L, 8683L, 7575L, 15835L, 9198L, 12399L, 4538L, 41313L, 13101L, 12310L, 559L, 20640L, 5541L, 20562L, 3333L, 6057L, 9304L, 1213L, 2516L, 42298L, 4837L, 31133L, 6429L, 20771L, 35805L, 3561L, 7004L, 16735L, 2506L, 1221L, 16966L, 40633L, 9821L, 4134L, 15576L, 7296L, 8319L, 3701L, 3662L, 23148L, 26769L, 38759L, 4641L, 4657L, 7521L, 33891L, 8764L, 5430L, 25074L, 10217L, 4713L, 11537L, 35994L, 29551L, 50989L, 9398L, 3130L, 8235L, 4809L, 21844L, 7539L, 6830L, 28859L, 7474L, 1120L, 7527L, 17676L, 4608L, 4739L, 19401L, 14777L, 34010L, 14780L, 36752L, 56173L, 26101L, 9942L, 1835L, 12271L, 11426L, 20001L, 33764L, 22894L, 50139L, 24490L, 5408L, 1955L, 6509L, 23911L, 13041L, 28001L, 25689L, 224L, 1741L, 1653L, 15669L, 7660L, 9416L, 3462L, 2153L, 4600L, 195L, 41075L, 4789L, 28000L, 27678L, 14259L, 1251L, 4230L, 2764L, 24167L, 24489L, 3582L, 3661L, 20080L, 7587L, 18366L, 22388L, 20388L, 43893L, 53904L, 8522L, 376L, 17579L, 1909L, 23947L, 1237L]
+The number of visited nodes: 280
+The network is loop free
+Duration: 0:00:00.135986

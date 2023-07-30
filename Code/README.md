@@ -1,4 +1,12 @@
 # Directory for the source code
+## Contributors:
+
+Mentor: Jaber Daneshamooz
+Mentees: Melody Yu, Sucheer Maddury
+
+### About the project:
+Melody Yu and Sucheer joined the ongoing project "Seagull, Privacy Preserving Network Verification" as part of Research Mentorship Program (RMP) at UCSB in a 6 week program. 
+
 
 ### Loop detection code:
 * Put all of the source code in a new directory called loop
