@@ -139,7 +139,8 @@ if __name__ == "__main__":
 
     c1 = VirtualMachine("c1")
     c2 = VirtualMachine("c2")
-    comps = (c1, c2)
+    c3 = VirtualMachine("c3")
+    comps = (c1, c2, c3)
 
     test = [
         ([(1, 2), (2, 3), (3, 4), (3, 1)], 4),
