@@ -1,0 +1,262 @@
+
+
+
+
+
+
+
+
+
+
+    loop_medium    
+Running 
+	 ./compile-mamba.py -A -n -r -u -s Programs/loop_medium 
+
+Compiling program in Programs/loop_medium
+loop_medium
+p = 340282366920938463463374607431768211507
+Prime size: 128
+Default bit length: 64
+Default statistical security parameter: 40
+Under Over Flow flag:  True
+Compiling file Programs/loop_medium/loop_medium.mpc
+Memory of type 's' now of size 11032
+Compiling basic block loop_medium-0--0
+Compiled 100000 lines at Tue Jan 11 16:12:09 2022
+Compiled 200000 lines at Tue Jan 11 16:12:11 2022
+Compiled 300000 lines at Tue Jan 11 16:12:12 2022
+Compiled 400000 lines at Tue Jan 11 16:12:14 2022
+Compiled 500000 lines at Tue Jan 11 16:12:16 2022
+Compiled 600000 lines at Tue Jan 11 16:12:18 2022
+Compiled 700000 lines at Tue Jan 11 16:12:19 2022
+Compiled 800000 lines at Tue Jan 11 16:12:21 2022
+Compiled 900000 lines at Tue Jan 11 16:12:22 2022
+Compiled 1000000 lines at Tue Jan 11 16:12:24 2022
+Compiled 1100000 lines at Tue Jan 11 16:12:26 2022
+Compiled 1200000 lines at Tue Jan 11 16:12:28 2022
+Initialized 1000000 registers at Tue Jan 11 16:12:29 2022
+Compiled 1300000 lines at Tue Jan 11 16:12:29 2022
+Compiled 1400000 lines at Tue Jan 11 16:12:31 2022
+Compiled 1500000 lines at Tue Jan 11 16:12:33 2022
+Compiled 1600000 lines at Tue Jan 11 16:12:35 2022
+Compiled 1700000 lines at Tue Jan 11 16:12:36 2022
+Compiled 1800000 lines at Tue Jan 11 16:12:38 2022
+Compiled 1900000 lines at Tue Jan 11 16:12:40 2022
+Compiled 2000000 lines at Tue Jan 11 16:12:41 2022
+Compiled 2100000 lines at Tue Jan 11 16:12:43 2022
+Compiled 2200000 lines at Tue Jan 11 16:12:44 2022
+The visited nodes in BFS order:
+<Compiler.types.Array object at 0x7f9f97720cd0>
+The number of visited nodes: 1421
+The network is loop free
+Duration: 0:00:38.061560
+Processing tape loop_medium-0 with 1 blocks
+Not merging open instructions in tape loop_medium-0
+Compile offline data requirements...
+Tape requires 89460 triples in modp, 147680 bits in modp
+Tape requires prime bit length 105
+Program requires: {('modp', 'triple'): 89460, ('modp', 'bit'): 147680}
+Memory size: defaultdict(<function <lambda> at 0x7f9f977212d0>, {'sr': 8192, 'c': 8192, 'r': 8192, 's': 12453, 'sb': 8192})
+Writing to Programs/loop_medium/loop_medium.sch
+Writing to Programs/loop_medium/loop_medium-0.asm
+
+Now running 
+	./scasm Programs/loop_medium 
+
+reading all `.asm` files in Programs/loop_medium
+processing: Programs/loop_medium/loop_medium-0.asm... 
+apply_default_optimization_pipeline: validate
+apply_default_optimization_pipeline: dummy
+apply_default_optimization_pipeline: print_structure
+apply_default_optimization_pipeline: print_merge
+apply_default_optimization_pipeline: start_stop_open
+apply_default_optimization_pipeline: merge_instructions
+apply_default_optimization_pipeline: nop_removal
+apply_default_optimization_pipeline: destination_propagation
+	Ignoring destination propagation optimization due to there being a total of  1846022 instructions
+apply_default_optimization_pipeline: assignment_chain
+apply_default_optimization_pipeline: cmp
+apply_default_optimization_pipeline: dce
+apply_default_optimization_pipeline: nop_removal
+apply_default_optimization_pipeline: goto_chain_collapse
+apply_default_optimization_pipeline: dead_block_removal
+apply_default_optimization_pipeline: move_done_block_to_end
+apply_default_optimization_pipeline: register_coloring
+apply_default_optimization_pipeline: nop_removal
+apply_default_optimization_pipeline: cond_flip
+apply_default_optimization_pipeline: validate
+
+
+no previous processes running
+no previous processes running
+trying with player 0
+trying with player 1
++ '[' '' == 1 ']'
++ ./PlayerBinary.x 0 -f 1 Programs/loop_medium
++ '[' '' == 1 ']'
++ ./PlayerBinary.x 1 -f 1 Programs/loop_medium
+
+No FHE Factories 1
+Port Num Base 5000
+Portnums : 
+
+No FHE Factories 1
+Port Num Base 5000
+Portnums : 
+Verbose 0
+Verbose 0
+maxI = 0
+(Min,Max) number of ...
+	(0,infty) multiplication triples
+	(0,infty) square pairs
+	(0,infty) bits
+
+maxI = 0
+(Min,Max) number of ...
+	(0,infty) multiplication triples
+	(0,infty) square pairs
+	(0,infty) bits
+
+0
+127.0.0.1
+Player1.crt
+0
+127.0.0.1
+P1
+1
+127.0.0.1
+Player2.crt
+P2
+2
+127.0.0.1
+Player3.crt
+P3
+Player1.crt
+P1
+1
+127.0.0.1
+Player2.crt
+P2
+2
+127.0.0.1
+Player3.crt
+P3
+
+
+p=340282366920938463463374607431768211507
+
+
+p=340282366920938463463374607431768211507
+
+Using Mod2Engine system for the binary circuit processing
+  - This uses Replicated sharing mod 2
+
+
+Using Mod2Engine system for the binary circuit processing
+  - This uses Replicated sharing mod 2
+
+Opening file Programs/loop_medium/loop_medium.sch
+Number of online threads I will run in parallel =  1
+Number of program sequences I need to load =  1
+Loading program 0 from Programs/loop_medium/loop_medium-0.bc
+Opening file Programs/loop_medium/loop_medium.sch
+Number of online threads I will run in parallel =  1
+Number of program sequences I need to load =  1
+Loading program 0 from Programs/loop_medium/loop_medium-0.bc
+All connections now done
+Setting up threads
+All connections now done
+Setting up threads
+I am player 1 in thread 0
+I am player 0 in thread 0
+I am player 1 in thread 1
+Waiting for thread 0 to be ready
+I am player 1 in thread 2
+I am player 1 in thread 3
+I am player 0 in thread 1
+I am player 0 in thread 2
+I am player 0 in thread 3
+I am player 0 in thread 4
+Waiting for thread 0 to be ready
+I am player 1 in thread 20000
+I am player 1 in thread 4
+I am player 0 in thread 20000
+Set up player 0 in thread 0 
+Set up player 0 in thread 1 
+Set up player 0 in thread 4 
+Doing online for player 0 in online thread 0
+Starting online phase 0
+Set up player 0 in thread 20000 
+Set up player 0 in thread 3 
+Set up player 0 in thread 2 
+Set up player 1 in thread 0 
+Set up player 1 in thread 2 
+Set up player 1 in thread 20000 
+Set up player 1 in thread 1 
+Set up player 1 in thread 3 
+Set up player 1 in thread 4 
+Doing online for player 1 in online thread 0
+Signal online thread ready 0
+Signal online thread ready 0
+Compiler: ./compile-mamba.py -A -n -r -u -s Programs/loop_medium
+Waiting for all clients to finish
+Starting online phase 0
+Compiler: ./compile-mamba.py -A -n -r -u -s Programs/loop_medium
+Waiting for all clients to finish
+Waiting for all clients to finish
+	Thread 0 terminating
+	Thread 0 terminating
+Waiting for all clients to finish
+Sent 180340 elements in 7 rounds
+Sent 180340 elements in 7 rounds
+Exiting online phase : 0
+[1m[31m<b3m4>
+Number instructions executed in online thread 0 is 1831822 
+</b3m4>
+[0mExiting inputs phase : thread = 0
+Exiting Mod2 Triple production thread
+Exiting square phase: thread = 0
+Exiting bit phase: thread = 0
+Exiting mult phase : thread = 0
+Joined Thread 0
+Joined Thread 1
+Joined Thread 2
+Joined Thread 3
+Exiting online phase : 0
+[1m[31m<b3m4>
+Number instructions executed in online thread 0 is 1831822 
+</b3m4>
+[0mExiting Mod2 Triple production thread
+Exiting inputs phase : thread = 0
+Exiting square phase: thread = 0
+Exiting bit phase: thread = 0
+Exiting mult phase : thread = 0
+Joined Thread 0
+Joined Thread 1
+Joined Thread 2
+Joined Thread 4
+Joined Thread 5
+Joined Thread 3
+Joined Thread 4
+Joined Thread 5
+Total Time (with thread locking) = 13.5518 seconds
+Produced a total of 299520 triples
+Produced a total of 120832 squares
+Produced a total of 239616 bits
+Total Time (with thread locking) = 13.552 seconds
+Produced a total of 299520 triples
+Produced a total of 120832 squares
+Produced a total of 239616 bits
+End of prog
+End of prog
+        WAITING      
+p = 340282366920938463463374607431768211507
+param = 136
+byte_length = 24
+size_c = 1048576  size_s =1048576
+
+The visited nodes in BFS order:
+[13237L, 44286L, 286L, 34171L, 43100L, 12654L, 6695L, 3356L, 2128L, 8218L, 12374L, 25152L, 3549L, 1273L, 8763L, 15743L, 44973L, 29252L, 36944L, 25973L, 1200L, 5459L, 6453L, 6939L, 5539L, 12337L, 51827L, 13030L, 7908L, 24940L, 31103L, 1835L, 174L, 9182L, 20676L, 1299L, 1120L, 8767L, 8245L, 3265L, 12414L, 7922L, 1239L, 12956L, 7843L, 1257L, 2828L, 15598L, 3257L, 15435L, 7342L, 2149L, 22773L, 6866L, 9116L, 3320L, 39923L, 702L, 209L, 2914L, 8455L, 8897L, 12638L, 4436L, 12480L, 8943L, 8859L, 7500L, 35425L, 8737L, 3491L, 12924L, 12731L, 5615L, 9150L, 24785L, 34119L, 5580L, 4323L, 3333L, 20144L, 12859L, 29396L, 42004L, 701L, 20621L, 31078L, 8648L, 15943L, 31334L, 34568L, 20825L, 20488L, 34225L, 5577L, 250L, 9145L, 6805L, 51906L, 24961L, 13101L, 25415L, 30962L, 48200L, 25074L, 13184L, 25091L, 29075L, 8487L, 3557L, 25309L, 39180L, 39912L, 29216L, 50300L, 3209L, 15830L, 4637L, 49375L, 35432L, 5541L, 6730L, 12989L, 9329L, 5410L, 5524L, 50244L, 43355L, 21263L, 20764L, 34224L, 48173L, 12552L, 6774L, 20965L, 5466L, 31019L, 31083L, 6461L, 6327L, 855L, 8966L, 8190L, 8473L, 4589L, 12389L, 47344L, 3216L, 15589L, 24963L, 1103L, 28917L, 29208L, 24724L, 24957L, 33926L, 4739L, 20634L, 49342L, 3292L, 5390L, 43948L, 13238L, 2119L, 12715L, 42861L, 6762L, 12306L, 12637L, 5588L, 15557L, 15426L, 5394L, 9009L, 23148L, 12779L, 9557L, 9031L, 6667L, 3255L, 30781L, 196841L, 16086L, 9066L, 34442L, 33891L, 17557L, 3327L, 19262L, 42525L, 31661L, 8881L, 7473L, 3249L, 12310L, 43942L, 15600L, 16097L, 50606L, 13193L, 19151L, 8657L, 6724L, 5483L, 1836L, 8468L, 21219L, 31027L, 20562L, 39792L, 50384L, 8928L, 12871L, 42708L, 8359L, 8926L, 8365L, 8304L, 9143L, 39647L, 12530L, 2603L, 39743L, 16276L, 8586L, 38930L, 8422L, 3215L, 39326L, 44514L, 9002L, 51483L, 20694L, 12754L, 7296L, 9829L, 20850L, 29422L, 49854L, 2529L, 33864L, 26769L, 18990L, 39757L, 4150L, 19092L, 3741L, 39405L, 36617L, 15412L, 16246L, 1280L, 35612L, 7029L, 13045L, 30961L, 30827L, 31562L, 42739L, 46797L, 8047L, 12767L, 8551L, 3213L, 6697L, 20712L, 39386L, 197538L, 29691L, 35141L, 34146L, 21013L, 29049L, 1213L, 15855L, 8400L, 10026L, 34288L, 13002L, 7018L, 38861L, 5603L, 12392L, 15958L, 57259L, 2602L, 12479L, 668L, 8447L, 8309L, 29113L, 25330L, 2497L, 17253L, 5400L, 6830L, 26299L, 12615L, 2116L, 680L, 766L, 31252L, 2907L, 12670L, 33770L, 11260L, 35819L, 29608L, 13307L, 7521L, 6848L, 16876L, 35007L, 36483L, 3561L, 12946L, 25291L, 20900L, 25376L, 17054L, 20771L, 33363L, 8342L, 48957L, 137L, 15960L, 12617L, 9121L, 19750L, 4651L, 16164L, 35805L, 20485L, 8676L, 39392L, 51290L, 13768L, 5089L, 2152L, 31424L, 6849L, 13213L, 5385L, 6663L, 39756L, 21385L, 34779L, 3605L, 34419L, 28877L, 20836L, 6871L, 9044L, 40528L, 1853L, 8672L, 42L, 43561L, 8501L, 29076L, 28716L, 8758L, 29562L, 7527L, 21502L, 8319L, 12360L, 34304L, 13156L, 9211L, 16353L, 3786L, 2107L, 19108L, 8717L, 5713L, 25441L, 513L, 2609L, 20960L, 31133L, 15895L, 9105L, 6772L, 1764L, 27822L, 5511L, 24130L, 29170L, 50088L, 8445L, 27L, 2611L, 3329L, 35320L, 1290L, 22625L, 28855L, 24851L, 9063L, 2516L, 297L, 5391L, 4134L, 8495L, 20500L, 3303L, 4802L, 31708L, 31742L, 1680L, 25180L, 31641L, 41073L, 43599L, 34245L, 786L, 24904L, 2860L, 46786L, 49594L, 57315L, 9498L, 1267L, 34863L, 31715L, 13037L, 12874L, 13285L, 20860L, 5503L, 8426L, 25577L, 8308L, 8330L, 8399L, 3330L, 29204L, 20679L, 21409L, 44141L, 8339L, 8544L, 33920L, 8681L, 8732L, 50683L, 12703L, 9153L, 12343L, 16150L, 9003L, 29017L, 2856L, 12322L, 21371L, 49463L, 8781L, 42579L, 12502L, 33843L, 9398L, 5408L, 16260L, 1221L, 1759L, 6799L, 9430L, 24186L, 4538L, 4713L, 2500L, 41887L, 26473L, 39651L, 12301L, 21011L, 31042L, 20955L, 16735L, 38082L, 41164L, 33885L, 9167L, 25229L, 48954L, 42652L, 22548L, 51468L, 6734L, 13194L, 4826L, 16265L, 8401L, 3132L, 12714L, 30950L, 553L, 11404L, 29066L, 29632L, 34555L, 28707L, 36619L, 18200L, 26479L, 39737L, 36622L, 34347L, 12586L, 34602L, 33941L, 3238L, 197261L, 10318L, 29695L, 24611L, 31170L, 3340L, 8972L, 23141L, 24203L, 3267L, 7552L, 3316L, 6503L, 37986L, 8674L, 9198L, 2200L, 47595L, 36630L, 9989L, 12386L, 9381L, 4657L, 15835L, 29571L, 44974L, 20632L, 39545L, 36625L, 9318L, 21396L, 20547L, 20773L, 15547L, 4766L, 4755L, 42979L, 12399L, 12312L, 4L, 49630L, 6661L, 25560L, 41313L, 8866L, 4610L, 6747L, 42298L, 29551L, 9119L, 226L, 12355L, 8262L, 42610L, 8877L, 11164L, 1241L, 20804L, 3245L, 35297L, 8744L, 12883L, 21414L, 35366L, 8764L, 30851L, 8591L, 29140L, 30890L, 5538L, 12578L, 13249L, 19080L, 15133L, 34695L, 559L, 16243L, 36631L, 34984L, 24875L, 2852L, 25525L, 39369L, 25596L, 8935L, 25148L, 49109L, 7545L, 15694L, 15587L, 21055L, 23889L, 5432L, 18351L, 5392L, 25543L, 2764L, 12338L, 35393L, 37084L, 2518L, 24691L, 33765L, 38525L, 9304L, 20766L, 703L, 51896L, 55554L, 16371L, 36937L, 26415L, 45147L, 10130L, 12968L, 45898L, 101L, 8235L, 5645L, 15685L, 24748L, 31463L, 34554L, 22070L, 25187L, 37105L, 5683L, 22925L, 3130L, 9729L, 8237L, 22995L, 13246L, 196919L, 52088L, 21083L, 49983L, 6895L, 12430L, 21232L, 48039L, 23541L, 22822L, 6057L, 8121L, 26711L, 23520L, 13489L, 16810L, 6828L, 13L, 9158L, 15782L, 16095L, 5927L, 16245L, 20590L, 23655L, 49909L, 13276L, 5397L, 30737L, 30764L, 30972L, 9901L, 34279L, 852L, 28792L, 34056L, 22652L, 20815L, 42077L, 50304L, 20912L, 16154L, 35471L, 35625L, 6846L, 16206L, 6876L, 21056L, 15389L, 41495L, 31677L, 2614L, 16347L, 25512L, 19752L, 29518L, 24806L, 42466L, 12333L, 5381L, 42346L, 34594L, 33125L, 47408L, 48539L, 31543L, 31304L, 16016L, 20880L, 5435L, 34270L, 25467L, 35826L, 6677L, 12620L, 21488L, 8816L, 39925L, 35152L, 16842L, 45899L, 25137L, 29680L, 1955L, 12741L, 6855L, 6713L, 42760L, 44919L, 29134L, 12732L, 13188L, 34372L, 16316L, 24956L, 12931L, 3301L, 56833L, 12885L, 31214L, 8251L, 13243L, 3308L, 34244L, 3212L, 17886L, 13293L, 49895L, 5617L, 15659L, 31246L, 39760L, 12880L, 25286L, 25144L, 8448L, 6736L, 21501L, 47605L, 35311L, 35706L, 8795L, 12570L, 5518L, 33890L, 25192L, 12813L, 57771L, 6838L, 17197L, 4725L, 16787L, 36621L, 14677L, 6157L, 11830L, 1880L, 13368L, 28329L, 5610L, 10834L, 27699L, 27843L, 8452L, 3352L, 10796L, 20231L, 11426L, 20001L, 12271L, 29672L, 8437L, 224L, 24607L, 1653L, 49272L, 50168L, 3220L, 27537L, 39310L, 41079L, 44814L, 8303L, 6429L, 3313L, 31290L, 51944L, 20647L, 8612L, 25369L, 8220L, 47670L, 9443L, 36628L, 36624L, 36618L, 39935L, 198276L, 12713L, 57862L, 5486L, 17685L, 50458L, 15451L, 16356L, 31615L, 2527L, 43751L, 49362L, 44583L, 9931L, 721L, 237L, 17676L, 34209L, 7514L, 39288L, 2519L, 10143L, 31242L, 55569L, 27745L, 7529L, 7643L, 51155L, 8903L, 6908L, 36626L, 4685L, 7575L, 12513L, 18804L, 23352L, 43950L, 18266L, 4760L, 25472L, 51074L, 5419L, 34108L, 6360L, 40300L, 27750L, 25689L, 15669L, 25019L, 51405L, 15626L, 28289L, 48287L, 9503L, 41176L, 2018L, 35313L, 9790L, 13657L, 9505L, 6539L, 41692L, 35776L, 9189L, 6893L, 197693L, 50618L, 47451L, 38235L, 20312L, 13041L, 6471L, 1930L, 27814L, 57169L, 51988L, 42109L, 24151L, 8240L, 9264L, 8517L, 7497L, 22335L, 43408L, 43127L, 51871L, 15788L, 33859L, 4768L, 17828L, 5504L, 39205L, 9050L, 31546L, 33823L, 29587L, 7642L, 34571L, 5606L, 8997L, 13306L, 31250L, 20657L, 42431L, 49770L, 51815L, 23911L, 11537L, 50139L, 19401L, 378L, 2108L, 2847L, 13092L, 24490L, 2607L, 197115L, 10886L, 197213L, 23518L, 21260L, 50056L, 577L, 5384L, 35019L, 8844L, 30880L, 13189L, 29468L, 47155L, 49451L, 42548L, 48479L, 42478L, 49534L, 41034L, 43975L, 28910L, 44237L, 35400L, 25490L, 39293L, 49800L, 41440L, 35154L, 5563L, 13257L, 8402L, 197553L, 41947L, 48089L, 24689L, 42514L, 56472L, 1133L, 41854L, 39134L, 42583L, 6706L, 196684L, 43542L, 35236L, 6881L, 39168L, 20555L, 35179L, 12597L, 2109L, 49010L, 47527L, 39554L, 44763L, 39029L, 49974L, 57413L, 196868L, 51678L, 715L, 17806L, 5609L, 6714L, 2819L, 48417L, 39904L, 57710L, 8228L, 42487L, 50446L, 24796L, 8595L, 42628L, 43382L, 15527L, 2586L, 719L, 29432L, 51930L, 21131L, 31272L, 34814L, 35680L, 29439L, 57119L, 50903L, 2485L, 34409L, 8508L, 15744L, 15851L, 33988L, 24440L, 8615L, 8728L, 6769L, 39211L, 197298L, 39839L, 25538L, 9506L, 45274L, 4804L, 56430L, 49401L, 34019L, 13645L, 59L, 3243L, 41075L, 35002L, 20845L, 13004L, 8708L, 12594L, 29278L, 25098L, 41659L, 31493L, 15800L, 35714L, 8779L, 42727L, 43656L, 39608L, 44869L, 39642L, 34823L, 48936L, 33902L, 42957L, 37100L, 31576L, 37149L, 5669L, 29449L, 3269L, 8323L, 50066L, 41794L, 24638L, 15756L, 43314L, 39102L, 48239L, 29072L, 43289L, 15474L, 1741L, 39857L, 35832L, 42831L, 13110L, 35401L, 8331L, 12545L, 44943L, 35254L, 25133L, 15772L, 9039L, 51407L, 18101L, 13103L, 41000L, 36965L, 3943L, 34688L, 8039L, 34421L, 50030L, 12991L, 6700L, 34772L, 43940L, 23661L, 24324L, 28859L, 12180L, 7132L, 21107L, 44615L, 24167L, 20388L, 39817L, 28905L, 3252L, 9609L, 14988L, 8239L, 7377L, 50348L, 5404L, 44885L, 12476L, 49409L, 44381L, 48144L, 12816L, 34878L, 7660L, 21280L, 37006L, 39780L, 14949L, 41965L, 43733L, 49363L, 11060L, 50989L, 12751L, 25145L, 196922L, 47524L, 7470L, 5555L, 41682L, 28745L, 21127L, 5387L, 51543L, 51604L, 16285L, 24923L, 42632L, 41976L, 197464L, 43782L, 34533L, 41798L, 24374L, 15689L, 39617L, 195L, 13124L, 33924L, 198641L, 12353L, 34021L, 39837L, 760L, 34055L, 5550L, 8664L, 8267L, 15576L, 35518L, 55895L, 18070L, 9488L, 6083L, 29512L, 197968L, 56791L, 39264L, 43321L, 31208L, 6850L, 50928L, 21079L, 30971L, 36958L, 23702L, 50091L, 35731L, 31712L, 17941L, 109L, 43179L, 20875L, 4812L, 4837L, 44038L, 198233L, 47253L, 25003L, 24560L, 45942L, 39759L, 15605L, 3242L, 12709L, 41381L, 31034L, 41606L, 20794L, 48500L, 43081L, 44574L, 50505L, 1887L, 51675L, 8310L, 34497L, 29550L, 12657L, 4764L, 10113L, 8396L, 38652L, 22388L, 28017L, 15377L, 31148L, 43022L, 53131L, 41589L, 24852L, 10084L, 7657L, 17435L, 15444L, 29492L, 8542L, 45345L, 31644L, 34087L, 17885L, 5568L, 8599L, 38731L, 50482L, 41419L, 43994L, 29355L, 2259L, 50897L, 55818L, 4658L, 3662L, 45019L, 2153L, 57344L, 29084L, 21211L, 51615L, 20876L, 198426L, 42714L, 15440L, 5479L, 42675L, 51127L, 35407L, 21250L, 51040L, 31283L, 4788L, 8346L, 50620L, 37045L, 37228L, 9340L, 58516L, 17709L, 611L, 4808L, 17579L, 1237L, 812L, 48850L, 50607L, 57821L, 40448L, 1734L, 28094L, 42541L, 38022L, 51728L, 6739L, 57381L, 39815L, 35100L, 29121L, 31378L, 2547L, 43939L, 49115L, 44706L, 42560L, 50898L, 198851L, 31549L, 42337L, 15696L, 43343L, 48555L, 35329L, 196652L, 47814L, 3248L, 9601L, 52342L, 262434L, 5692L, 10429L, 8167L, 6534L, 7474L, 42313L, 36375L, 38018L, 22356L, 45267L, 38037L, 8048L, 7004L, 12833L, 27765L, 51225L, 12757L, 48161L, 48872L, 24489L, 47862L, 51182L, 47698L, 31364L, 196657L, 50206L, 2878L, 31203L, 34267L, 3239L, 6854L, 16287L, 57359L, 48858L, 39741L, 21299L, 47350L, 44618L, 57288L, 45904L, 39399L, 24051L, 38193L, 9541L, 17501L, 26785L, 39311L, 28773L, 197419L, 49268L, 1739L, 1307L, 56740L, 5704L, 9270L, 24865L, 43893L, 197827L, 51515L, 5567L, 25534L, 1909L, 29596L, 57662L, 25446L, 48818L, 48191L, 45926L, 132038L, 3661L, 4616L, 29582L, 198619L, 38299L, 681L, 52037L, 43395L, 39611L, 45809L, 18678L, 51784L, 4641L, 198124L, 29119L, 56552L, 51001L]
+The number of visited nodes: 1421
+The network is loop free
+Duration: 0:00:02.937177
