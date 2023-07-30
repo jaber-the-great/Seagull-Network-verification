@@ -1,7 +1,7 @@
 # DFS for loop detection
 # Input: number of vertices, list of edges
 # Output: True/False
-# M.Y @UCSB RMP 23
+
 
 class Edge_BFS:
     def __init__(self, end_node):

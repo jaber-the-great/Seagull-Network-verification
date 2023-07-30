@@ -1,7 +1,7 @@
 # DFS for loop detection
 # Input: number of vertices, list of edges
 # Output: True/False
-# M.Y @UCSB RMP 23
+
 
 from collections import defaultdict
 

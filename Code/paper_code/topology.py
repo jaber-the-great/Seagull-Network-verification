@@ -1,7 +1,7 @@
 # Topological sort based loop detection
 # Input: number of vertices, list of edges
 # Output: True/False
-# Questions contact: ocmelodyyu@gmail.com
+
 
 
 
