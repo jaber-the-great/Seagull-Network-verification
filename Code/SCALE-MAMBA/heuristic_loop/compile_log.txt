@@ -1,4 +1,4 @@
-melody@BunnyLinux:~/SCALE-MAMBA$ ./compile.sh Programs/heuristic_loop
+$ ./compile.sh Programs/heuristic_loop
 Running
 	 ./compile-mamba.py -A -n -r -u -s Programs/heuristic_loop
 

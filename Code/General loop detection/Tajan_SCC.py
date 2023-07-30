@@ -4,7 +4,7 @@
 
 # Input: number of vertices, list of edges
 # Output: True/False
-# Questions contact: ocmelodyyu@gmail.com
+
 
 from collections import defaultdict
 from mygraph import *
