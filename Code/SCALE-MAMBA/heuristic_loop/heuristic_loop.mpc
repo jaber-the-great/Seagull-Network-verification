@@ -8,6 +8,29 @@ DestNode = sint.get_private_input_from(0)
 
 print_ln("Start node = %s, Destination node = %s", StartNode.reveal(), DestNode.reveal())
 
+# TODO: Read all the edges from edgelist input file here:
+
+
+
+
+# TODO: Copy the BFS code here and check the loop freedom of the network you read from file 
+
+
+
+# If the network has loop, terminate the program 
+
+
+# else if the network is loop free, wait for the consoles input (the AS admin would request for checking a configuration by inputting two values: <src, des> 
+# This step is one at a time ... you get an edge, check the heuristic and then get the next one if there is any:
+# while (true)
+# get the edge from keyboard
+# Validate loop freedom 
+# if loop --> print the code
+# else, update the next hop for that specific node that we got update from AS admin
+# go to the beginning of the loop 
+
+
+
 edges = sint.Matrix(NumOfEdges, 2)
 # read in the edge list
 for i in range(NumOfEdges):
