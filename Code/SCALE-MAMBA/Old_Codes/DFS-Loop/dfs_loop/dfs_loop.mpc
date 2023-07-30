@@ -1,0 +1,83 @@
+from datetime import datetime
+NumOfNodes = 10
+DestNode = 10
+
+jaber = sint.Matrix(NumOfNodes -1,2)
+jaber[0][0] = 1
+jaber[0][1] = 3
+jaber[1][0] = 2
+jaber[1][1] = 5
+jaber[2][0] = 3
+jaber[2][1] = 5
+jaber[3][0] = 4
+jaber[3][1] = 6
+jaber[4][0] = 5
+jaber[4][1] = 6
+jaber[5][0] = 6
+jaber[5][1] = 10
+jaber[6][0] = 8
+jaber[6][1] = 9
+jaber[7][0] = 9
+jaber[7][1] = 10
+jaber[8][0] = 7
+jaber[8][1] = 3
+
+
+class Graph:
+
+    # Constructor
+    def __init__(self):
+
+        # default dictionary to store graph
+        self.adj = []
+        self.cnt = 0 
+
+    # function to add an edge to graph
+    def addEdge(self, u, v):
+        self.adj.append([u,v])
+
+    # A function used by DFS
+    def DFSUtil(self, v, visited):
+
+        # Mark the current node as visited
+        # and print it
+        visited[self.cnt] = v
+        self.cnt+=1
+        print(v)
+
+        # Recur for all the vertices
+        # adjacent to this vertex
+        for i in range(NumOfNodes -1):
+            if self.adj[i][1] == v and self.adj[i][0] not in visited:
+                self.DFSUtil(self.adj[i][0], visited)
+    # The function to do DFS traversal. It uses
+    # recursive DFSUtil()
+    def DFS(self, v,visited):
+
+        # Call the recursive helper function
+        # to print DFS traversal
+        self.DFSUtil(v, visited)
+        print("The CNT is:")
+        print(self.cnt)
+
+visited = Array(NumOfNodes,sint)
+for i in range(NumOfNodes):
+    visited[i] = 0
+
+visited[0] = DestNode
+
+g = Graph()
+for i in range(NumOfNodes-1):
+   g.addEdge(jaber[i][0],jaber[i][1])
+start_time = datetime.now()
+g.DFS(DestNode,visited)
+
+print("The visited nodes in DFS order:")
+print(visited)
+print("The number of visited nodes: %d" % (g.cnt))
+if g.cnt == NumOfNodes:
+    print("The network is loop free")
+else:
+    print("The network  is NOT loop free")
+end_time = datetime.now()
+print('Duration: {}'.format(end_time - start_time))
