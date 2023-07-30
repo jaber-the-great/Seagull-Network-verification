@@ -76,7 +76,7 @@ cat in.3 | ./Player.x -verbose 1 2 Programs/recover_network
 You should see the following output from terminal 0
 
 ```
-melody@BunnyLinux:~/SCALE-MAMBA$ cat in.1 | ./Player.x -verbose 1 0 Programs/recover_network 
+$ cat in.1 | ./Player.x -verbose 1 0 Programs/recover_network 
 + '[' '' == 1 ']'
 + ./PlayerBinary.x -verbose 1 0 Programs/recover_network
 
