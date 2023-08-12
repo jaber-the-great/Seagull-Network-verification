@@ -1,0 +1,15 @@
+- [ ] Add the report /paper/
+- [ ] Runs the code with different setup (scale mamba has this option)
+  - [ ] Changing number of parties 
+  - [ ] Changing the threshold 
+- [ ] Rethink storing and retrieving the shares
+- [ ] Rethink getting input from command line
+- [ ] Starting to use other framework 
+- [ ] Running the code for incremental method 
+- [ ] Proof of privacy:
+  - [ ] Data collection
+  - [ ] Secret re-sharing
+  - [ ] Incremental version
+  - [ ] Revealing the result
+- [ ] Consider import/export policy (So IMPORTANT)
+- [ ] Second table for back up link?
