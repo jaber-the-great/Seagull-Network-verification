@@ -4,6 +4,7 @@
   - [ ] Changing the threshold 
 - [ ] Rethink storing and retrieving the shares
 - [ ] Rethink getting input from command line
+- [ ] Rethink getting the changes from a file
 - [ ] Starting to use other framework 
 - [ ] Running the code for incremental method 
 - [ ] Proof of privacy:
