@@ -1,3 +1,7 @@
+- [ ] Finishing the iterature review: Extensively looking for the existing papers working on similar problem (network verification is one problem, privacy preserving computation over graph is another problem)
+- [ ] Testing the codes and running them on server for benchmarking
+- [ ] Review and rewrite the paper through several iterations.
+- [ ] Putting the paper on archive 
 - [ ] Increamental with TNO
 - [ ] Add the report /paper/
 - [ ] Runs the code with different setup (scale mamba has this option)
