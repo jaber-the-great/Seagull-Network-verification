@@ -27,3 +27,12 @@ of inter-domain Software-Defined Networking](https://dial.uclouvain.be/downloade
 - [ ] https://ieeexplore.ieee.org/abstract/document/8307096
 - [ ] [MPC for Securing Internet Infrastructure](https://ieeexplore.ieee.org/abstract/document/9159160)
 - [ ] https://dl.acm.org/doi/abs/10.1145/2018436.2018469
+
+* Skimming the papers (intro, approach) --> If not so related, jsut several bullet points:
+ * One is the general approach (MPC, cryptography, SMT, just verification and no privacy)
+ * Shortcomings
+ * Scale
+ * ....
+* If it is so relevant, dig through it and share with me
+* Have some idea to include in related works
+* Find other possible related works 
