@@ -1,3 +1,13 @@
+  
+### Review for submit:
+- [ ] Writing abstract 
+- [ ] Merge background and problem statement 
+
+* The process: Intro and existing problem, related works,
+* Problem statement: 
+
+
+  ### old TODO list
 - [ ] Finishing the iterature review: Extensively looking for the existing papers working on similar problem (network verification is one problem, privacy preserving computation over graph is another problem)
 - [ ] Testing the codes and running them on server for benchmarking
 - [ ] Review and rewrite the paper through several iterations.
