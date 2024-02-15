@@ -1,3 +1,3 @@
-*.mpc linguist-detectable=false
-*.py linguist-detectable=true
-*.cpp linguist-detectable=true
+*.mpc linguist-language=scale-mamba
+*.py linguist-language=python
+*.cpp linguist-language=cpp
